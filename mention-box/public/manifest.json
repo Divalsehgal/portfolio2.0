@@ -1,0 +1,24 @@
+{
+  "name": "Your React Vite App",
+  "short_name": "Vite App",
+  "description": "A simple React app built with Vite",
+  "start_url": ".",
+  "display": "standalone",
+  "id": "/?source=pwa",
+  "background_color": "#3367D6",
+  "scope": "/",
+  "theme_color": "#3367D6",
+  "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
