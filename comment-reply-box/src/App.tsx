@@ -1,8 +1,9 @@
-import React, { useRef, useState, forwardRef, HTMLProps, Ref } from "react";
+import React, { useRef, useState } from "react";
 import "./App.css";
 import POSTS from "./posts.json";
 import Accordian from "./components/Accordian";
 import { formatTimestamp } from "./helpers";
+import InputBox from "./components/InputBox";
 
 type PostData = {
   content: string;
@@ -51,7 +52,7 @@ const Post = () => {
 
     const newPost: PostProps = {
       postLikes: 0,
-      postId: Date.now(), // Using timestamp as postId for uniqueness
+      postId: Date.now(),
       postTimeStamp: new Date().toISOString(),
       postData: { content },
       postComments: [],
@@ -83,13 +84,17 @@ const Post = () => {
             const { content } = postData;
             return (
               <React.Fragment key={post.postId}>
-                <div className="post-container">
+                <div className="post-container" data-postid={post.postId}>
                   <div className="post-content">{content}</div>
 
-                  <Comments postComments={postComments} />
-                  <div className="post-date">
+                  <Comments
+                    postComments={postComments}
+                    setPosts={setPosts}
+                    postId={post.postId}
+                  />
+                  <span className="post-date">
                     {formatTimestamp(postTimeStamp)}
-                  </div>
+                  </span>
                 </div>
               </React.Fragment>
             );
@@ -99,7 +104,15 @@ const Post = () => {
   );
 };
 
-const Comments = ({ postComments }: { postComments: CommentProps[] }) => {
+const Comments = ({
+  postComments,
+  setPosts,
+  postId,
+}: {
+  postComments: CommentProps[];
+  setPosts: React.Dispatch<React.SetStateAction<PostProps[]>>;
+  postId: number;
+}) => {
   const functionProps = {
     title: "see comments",
   };
@@ -118,18 +131,29 @@ const Comments = ({ postComments }: { postComments: CommentProps[] }) => {
       commentData: content,
       replies: [],
     };
-    //setComment((prev) => [...prev, newComment]);
+
+    setPosts((prevPosts) => {
+      return prevPosts.map((post) => {
+        if (post.postId === postId) {
+          return {
+            ...post,
+            postComments: [...post.postComments, newComment],
+          };
+        }
+        return post;
+      });
+    });
+
     if (commentRef.current) {
       commentRef.current.value = "";
     }
   };
 
   return (
-    <>
-      {postComments.length > 0 ? (
-        <Accordian childrenProps={functionProps}>
-          {" "}
-          <div className="comments-container">
+    <Accordian childrenProps={functionProps}>
+      <div className="comments-container">
+        {postComments.length > 0 ? (
+          <>
             {postComments.map(
               ({
                 commentId,
@@ -140,63 +164,112 @@ const Comments = ({ postComments }: { postComments: CommentProps[] }) => {
                 return (
                   <React.Fragment key={commentId}>
                     <div className="comment-content">{commentData}</div>
-                    {replies.length > 0 && (
-                      <div className="reply-container">
-                        <Reply replies={replies} />
-                      </div>
-                    )}
+                    <span className="comment-date">
+                      {formatTimestamp(commentTimeStamp)}
+                    </span>
+                    <div className="reply-container">
+                      <Reply
+                        postId={postId}
+                        replies={replies}
+                        setPosts={setPosts}
+                        commentId={commentId}
+                      />
+                    </div>
                   </React.Fragment>
                 );
               }
             )}
-          </div>
-        </Accordian>
-      ) : (
-        <>
+          </>
+        ) : (
+          <></>
+        )}
+        <div>
           <InputBox ref={commentRef} placeholder={"start writing a comment"} />
           <button onClick={handleSubmit}>submit</button>
-        </>
-      )}
-    </>
+        </div>
+      </div>
+    </Accordian>
   );
 };
 
-const Reply = ({ replies }: { replies: ReplyProps[] }) => {
+const Reply = ({
+  replies,
+  setPosts,
+  commentId,
+  postId,
+}: {
+  replies: ReplyProps[];
+  setPosts: React.Dispatch<React.SetStateAction<PostProps[]>>;
+  commentId: number;
+  postId: number;
+}) => {
   const functionProps = {
     title: "see replies",
   };
+
+  const replyRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = () => {
+    let content;
+    if (!replyRef.current) {
+      return;
+    }
+    content = replyRef.current.value;
+    const newReply: ReplyProps = {
+      replyLikes: 0,
+      replyId: Date.now(),
+      replyData: content,
+      replyTimeStamp: new Date().toISOString(),
+    };
+
+    setPosts((prevPosts) => {
+      return prevPosts.map((post) => {
+        if (post.postId === postId) {
+          return {
+            ...post,
+            postComments: post.postComments.map((comment) => {
+              if (comment.commentId === commentId) {
+                return {
+                  ...comment,
+                  replies: [...comment.replies, newReply],
+                };
+              }
+              return comment;
+            }),
+          };
+        }
+        return post;
+      });
+    });
+
+    if (replyRef.current) {
+      replyRef.current.value = "";
+    }
+  };
   return (
-    <>
+    <Accordian childrenProps={functionProps}>
       {replies.length > 0 ? (
-        <Accordian childrenProps={functionProps}>
+        <div className="replies-container">
           {replies.map(({ replyId, replyData, replyTimeStamp }: ReplyProps) => {
             return (
               <React.Fragment key={replyId}>
                 <div className="reply-content">{replyData}</div>
+                <span className="reply-date">
+                  {formatTimestamp(replyTimeStamp)}
+                </span>
               </React.Fragment>
             );
           })}
-        </Accordian>
+        </div>
       ) : (
-        ""
+        <></>
       )}
-    </>
+      <div>
+        <InputBox ref={replyRef} placeholder={"start writing a reply"} />
+        <button onClick={handleSubmit}>submit</button>
+      </div>
+    </Accordian>
   );
 };
-
-type InputBoxProps = {
-  placeholder: string;
-} & HTMLProps<HTMLInputElement>;
-
-const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
-  (props, ref: Ref<HTMLInputElement>) => {
-    const { placeholder, ...rest } = props;
-    return (
-      <div className="input-box">
-        <input ref={ref} placeholder={placeholder} type="text" {...rest} />
-      </div>
-    );
-  }
-);
 
 export default App;

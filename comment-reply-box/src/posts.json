@@ -3,16 +3,30 @@
     "postId": 1,
     "postData": {
       "title": "First Post",
-      "content": "This is the content of the first post."
+      "content": "Just had a great cup of coffee at my favorite cafe! ☕️ #CoffeeLovers"
     },
     "postLikes": 20,
     "postTimeStamp": "2024-02-09T09:00:00Z",
     "postComments": [
       {
         "commentId": 1,
-        "commentData": "This is a comment on the first post.",
+        "commentData": "Sounds amazing! I love that cafe too. 😊",
         "commentLikes": 5,
         "commentTimeStamp": "2024-02-09T09:05:00Z",
+        "replies": [
+          {
+            "replyId": 1,
+            "replyData": "It's truly a gem in the neighborhood!",
+            "replyLikes": 2,
+            "replyTimeStamp": "2024-02-09T09:10:00Z"
+          }
+        ]
+      },
+      {
+        "commentId": 2,
+        "commentData": "I'm more of a tea person, but that sounds delightful!",
+        "commentLikes": 3,
+        "commentTimeStamp": "2024-02-09T09:08:00Z",
         "replies": []
       }
     ]
@@ -21,73 +35,36 @@
     "postId": 2,
     "postData": {
       "title": "Second Post",
-      "content": "This is the content of the second post."
+      "content": "Just finished reading a fascinating book. Highly recommend it to everyone! 📚 #BookWorm"
     },
     "postLikes": 15,
     "postTimeStamp": "2024-02-09T10:00:00Z",
     "postComments": [
       {
         "commentId": 1,
-        "commentData": "This is a comment on the second post.",
+        "commentData": "What book did you read? I'm always looking for new recommendations.",
         "commentLikes": 3,
         "commentTimeStamp": "2024-02-09T10:05:00Z",
         "replies": [
           {
             "replyId": 1,
-            "replyData": "This is a reply to the comment on the second post.",
+            "replyData": "I read 'The Alchemist' by Paulo Coelho. It's a life-changing read!",
             "replyLikes": 2,
             "replyTimeStamp": "2024-02-09T10:10:00Z"
           }
         ]
-      }
-    ]
-  },
-  {
-    "postId": 3,
-    "postData": {
-      "title": "Third Post",
-      "content": "This is the content of the third post."
-    },
-    "postLikes": 25,
-    "postTimeStamp": "2024-02-09T11:00:00Z",
-    "postComments": []
-  },
-  {
-    "postId": 4,
-    "postData": {
-      "title": "Fourth Post",
-      "content": "This is the content of the fourth post."
-    },
-    "postLikes": 18,
-    "postTimeStamp": "2024-02-09T12:00:00Z",
-    "postComments": []
-  },
-  {
-    "postId": 5,
-    "postData": {
-      "title": "Fifth Post",
-      "content": "This is the content of the fifth post."
-    },
-    "postLikes": 30,
-    "postTimeStamp": "2024-02-09T13:00:00Z",
-    "postComments": [
+      },
       {
-        "commentId": 1,
-        "commentData": "This is a comment on the fifth post.",
-        "commentLikes": 7,
-        "commentTimeStamp": "2024-02-09T13:05:00Z",
+        "commentId": 2,
+        "commentData": "That's one of my favorites too! It's such an inspiring book.",
+        "commentLikes": 2,
+        "commentTimeStamp": "2024-02-09T10:07:00Z",
         "replies": [
           {
-            "replyId": 1,
-            "replyData": "This is a reply to the comment on the fifth post.",
-            "replyLikes": 3,
-            "replyTimeStamp": "2024-02-09T13:10:00Z"
-          },
-          {
             "replyId": 2,
-            "replyData": "Another reply to the comment on the fifth post.",
-            "replyLikes": 2,
-            "replyTimeStamp": "2024-02-09T13:15:00Z"
+            "replyData": "Absolutely! It teaches so many valuable life lessons.",
+            "replyLikes": 1,
+            "replyTimeStamp": "2024-02-09T10:12:00Z"
           }
         ]
       }
