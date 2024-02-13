@@ -7,7 +7,7 @@ export default function App() {
       <div className="container">
         <h1>Folder Structure</h1>
       </div>
-      <Folder files={files} />
+      <Folder {...files} />
     </div>
   );
 }

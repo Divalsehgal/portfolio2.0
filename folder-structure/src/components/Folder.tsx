@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Icon from "./Icon";
-import { File } from "../files";
+import { FileProps } from "../files";
 
-const Folder = (props: File) => {
+const Folder  = (props: FileProps) => {
   const { name, isFolder, children } = props;
+  console.log(props)
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -38,8 +39,8 @@ const Folder = (props: File) => {
         {isFolder &&
           open &&
           children &&
-          children.map((f: File) => {
-              return <Folder key={f.name} {...f} />;
+          children.map((f: FileProps) => {
+            return <Folder key={f.name} {...f} />;
           })}
       </div>
     </>

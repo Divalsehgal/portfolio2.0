@@ -1,10 +1,10 @@
-export interface File {
+export interface FileProps {
   name: string;
   isFolder: boolean;
-  children?: File[];
+  children?: FileProps[];
 }
 
-export const files: File = {
+export const files: FileProps = {
   name: "root",
   isFolder: true,
   children: [
