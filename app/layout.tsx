@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "./(components)/Navbar";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head />
       <link
         rel="apple-touch-icon"
         href="/apple-touch-icon-180x180.png"
@@ -25,8 +27,23 @@ export default function RootLayout({
       <link rel="mask-icon" href="./assets" color="#FFFFFF" />
       <meta name="theme-color" content="#ffffff" />
       <link rel="manifest" href="/manifest.json" />
-      <body className={inter.className}>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.className
+        )}
+      >
         <NavBar />
+
+          <div vaul-drawer-wrapper="">
+            <div className="relative flex min-h-screen flex-col bg-background">
+              {/* <SiteHeader /> */}
+
+              <main className="flex-1">{children}</main>
+              {/* <SiteFooter /> */}
+            </div>
+          </div>
+       
         {children}
       </body>
     </html>
