@@ -1,12 +1,12 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { staticCode } from "./sampleCode";
-export default function page() {
-  // Write your code here
+export default function Page() {
   const data = staticCode;
   const [pdata, setPdata] = useState("please start generating...");
   const [start, setStart] = useState(false);
-  let timer;
+  let timer: any;
   const clickHandler = () => {
     setStart(true);
   };
@@ -14,32 +14,32 @@ export default function page() {
   const generating = () => {
     let count = 0;
     timer = setInterval(() => {
-      const temp1 = data;
       count++;
-      if (count === temp1.length - 1) {
+      if (count === staticCode.length - 1) {
         clearInterval(timer);
       }
 
-      setPdata((i) => i + temp1[count]);
+      setPdata((i) => i + staticCode[count]);
     }, 10);
   };
 
   useEffect(() => {
     if (start) {
       generating();
-    } else {
-      setStart(false);
     }
 
     return () => {
-      setStart(false);
+      clearInterval(timer);
     };
   }, [start]);
+
   const resetHandler = () => {
+    clearInterval(timer);
     setStart(false);
     setPdata("please start generating...");
-    clearInterval(timer);
   };
+
+  console.log("false", false);
 
   return (
     <div>

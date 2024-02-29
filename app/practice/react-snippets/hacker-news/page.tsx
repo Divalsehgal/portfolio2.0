@@ -10,11 +10,11 @@ type HackerNewsData = {
   type: string;
 };
 
-export default function App() {
+export default function Page() {
   const [total, setTotal] = useState<[]>([]);
   const [data, setData] = useState<HackerNewsData[]>([]);
   const [isFetching, setIsFetching] = useState<Boolean>(false);
-  let content;
+  let content:any;
   if (typeof document !== "undefined") {
     content = document.querySelector(".main-content");
   }
@@ -40,7 +40,7 @@ export default function App() {
     setData(result);
   };
   const loadMoreStories = () => {
-    let timer = 0;
+    let timer:any = 0;
     clearTimeout(timer);
     const startIndex = data.length;
     let endIndex = startIndex + itemsPerPage;

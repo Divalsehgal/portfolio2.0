@@ -1,8 +1,8 @@
 'use client'
 import React from "react";
 
-export default function Checkbox({ id, label, onChange, checked }) {
-  const onChangeHandler = (id): any => {
+export default function Checkbox({ id, label, onChange, checked }:any) {
+  const onChangeHandler = (id:any): any => {
     return function () {
       onChange(id);
     };

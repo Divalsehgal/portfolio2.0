@@ -8,7 +8,7 @@ export default function Page() {
   const [boxState, setBoxState] = React.useState(list);
   const [select, setSelect] = React.useState(false);
 
-  const onChangeHandler = (id) => {
+  const onChangeHandler = (id:any) => {
     if (id === "select all") {
       setBoxState((prev) => {
         return prev.map((f) => {

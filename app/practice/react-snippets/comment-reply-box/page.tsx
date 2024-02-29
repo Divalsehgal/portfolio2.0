@@ -4,7 +4,7 @@ import "./index.css";
 import POSTS from "./posts.json";
 import Accordian from "./components/Accordian";
 import { formatTimestamp } from "./helpers";
-import InputBox from "./components/InputBox";
+import {InputBox} from "./components/InputBox";
 
 type PostData = {
   content: string;
@@ -33,7 +33,7 @@ type PostProps = {
   postComments: CommentProps[];
 };
 
-const page = () => {
+export default function Page(){
   return (
     <>
       <Post />
@@ -273,4 +273,3 @@ const Reply = ({
   );
 };
 
-export default page;

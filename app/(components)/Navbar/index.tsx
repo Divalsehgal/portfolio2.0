@@ -2,24 +2,18 @@
 import Link from "next/link";
 
 const NavBar = () => {
- // const [darkMode, setDarkMode] = useState(false);
-
-//   const toggleTheme = () => {
-//     setDarkMode(!darkMode);
-//     // Implement logic to toggle between light and dark themes
-//   };
 
   return (
     <nav>
       <ul>
         <li>
           <Link href="/blog">
-            <>Blog </>
+            Blog 
           </Link>
         </li>
         <li>
           <Link href="/practice">
-            <>Practice</>
+            Practice
           </Link>
         </li>
       </ul>

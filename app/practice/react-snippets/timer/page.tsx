@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 
-function page() {
+export default function Page() {
   const [time, setTime] = useState({ minutes: 0 });
   const [inputValue, setInputValue] = useState(0);
   const [pause, setPause] = useState(false);
@@ -34,8 +34,7 @@ function page() {
   };
 
   useEffect(() => {
-    let timer = 0;
-    console.log(time.minutes);
+    let timer:any = 0;
     if (start && time.minutes > 0 && !pause) {
       timer = setInterval(() => {
         setTime((prevTime) => {
@@ -87,4 +86,4 @@ function page() {
   );
 }
 
-export default page;
+

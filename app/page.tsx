@@ -9,7 +9,7 @@ function page({}: Props) {
 
   return (
     <div>
-      <NavBar/>
+
 
     </div>
   );

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import react, { useState } from "react";
 import "./App.css";
 interface FormState {
   product: string;
@@ -11,7 +11,7 @@ interface FormStateError {
   quantity: string;
 }
 
-function page() {
+export default function Page() {
   const [formState, setFormState] = useState<FormState>({
     product: "",
     quantity: 0,
@@ -100,4 +100,3 @@ function page() {
   );
 }
 
-export default page;

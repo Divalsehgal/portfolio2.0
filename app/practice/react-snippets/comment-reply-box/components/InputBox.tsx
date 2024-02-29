@@ -4,7 +4,7 @@ type InputBoxProps = {
   placeholder: string;
 } & HTMLProps<HTMLInputElement>;
 
-const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
+export const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
   (props, ref: Ref<HTMLInputElement>) => {
     const { placeholder, ...rest } = props;
     return (
@@ -14,4 +14,5 @@ const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
     );
   }
 );
-export default InputBox;
+
+InputBox.displayName = "InputBox";
