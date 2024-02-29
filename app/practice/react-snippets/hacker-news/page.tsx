@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import "./App.css";
 type HackerNewsData = {
   by: string;
   id: number;

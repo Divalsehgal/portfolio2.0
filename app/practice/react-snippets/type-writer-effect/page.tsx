@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { staticCode } from "./sampleCode";
+import { Button } from "@/components/ui/button";
 export default function Page() {
   const data = staticCode;
   const [pdata, setPdata] = useState("please start generating...");
@@ -43,8 +44,8 @@ export default function Page() {
 
   return (
     <div>
-      <button onClick={resetHandler}>reset</button>
-      <button onClick={clickHandler}>start generating</button>
+      <Button onClick={resetHandler}>reset</Button>
+      <Button onClick={clickHandler}>start generating</Button>
 
       <div className="generated-text-box">{pdata}</div>
     </div>

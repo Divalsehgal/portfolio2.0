@@ -1,4 +1,6 @@
 'use client'
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 
 
@@ -62,7 +64,7 @@ export default function Page() {
         <h1>Timer</h1>
         <div>
           <h5>Enter time</h5>
-          <input
+          <Input
             type="number"
             value={inputValue}
             name="minutes"
@@ -74,12 +76,12 @@ export default function Page() {
       <div className="bottom">
         <div>{start && time?.minutes}</div>
         <div className="button">
-          <button onClick={toggleTimer}>{!start ? "start" : "stop"}</button>
-          <button onClick={resetHandler}>reset timer</button>
-          <button onClick={clearHandler}>clear</button>
-          <button onClick={pauseHandler} disabled={!start}>
+          <Button onClick={toggleTimer}>{!start ? "start" : "stop"}</Button>
+          <Button onClick={resetHandler}>reset timer</Button>
+          <Button onClick={clearHandler}>clear</Button>
+          <Button onClick={pauseHandler} disabled={!start}>
             {!pause ? "pause" : "resume"}
-          </button>
+          </Button>
         </div>
       </div>
     </div>

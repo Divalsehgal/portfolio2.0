@@ -5,6 +5,7 @@ import POSTS from "./posts.json";
 import Accordian from "./components/Accordian";
 import { formatTimestamp } from "./helpers";
 import {InputBox} from "./components/InputBox";
+import { Button } from "@/components/ui/button";
 
 type PostData = {
   content: string;
@@ -73,7 +74,7 @@ const Post = () => {
             ref={postRef}
             placeholder={"start writing your posts here"}
           />
-          <button onClick={handleSubmit}>submit</button>
+          <Button onClick={handleSubmit}>submit</Button>
         </div>
       </div>
 
@@ -186,7 +187,7 @@ const Comments = ({
         )}
         <div>
           <InputBox ref={commentRef} placeholder={"start writing a comment"} />
-          <button onClick={handleSubmit}>submit</button>
+          <Button onClick={handleSubmit}>submit</Button>
         </div>
       </div>
     </Accordian>

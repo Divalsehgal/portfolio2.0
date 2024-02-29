@@ -1,3 +1,4 @@
+import { Input } from "@/components/ui/input";
 import { HTMLProps, Ref, forwardRef } from "react";
 
 type InputBoxProps = {
@@ -9,7 +10,7 @@ export const InputBox = forwardRef<HTMLInputElement, InputBoxProps>(
     const { placeholder, ...rest } = props;
     return (
       <div className="input-box">
-        <input ref={ref} placeholder={placeholder} type="text" {...rest} />
+        <Input ref={ref} placeholder={placeholder} type="text" {...rest} />
       </div>
     );
   }

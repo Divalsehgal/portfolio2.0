@@ -1,6 +1,8 @@
 'use client'
-import react, { useState } from "react";
-import "./App.css";
+import  { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 interface FormState {
   product: string;
   quantity: number;
@@ -67,13 +69,12 @@ export default function Page() {
     return Object.values(formStateError).every((error) => error === "");
   };
 
-  console.log(formState.product, formState.quantity);
 
   return (
     <>
       <form>
-        <label>Product Name</label>
-        <input
+        <Label htmlFor="productName">Product Name</Label>
+        <Input
           className=""
           name="product"
           type="text"
@@ -82,8 +83,9 @@ export default function Page() {
           onBlur={blurHandler}
         />
         <p>{formStateError.product}</p>
-        <label>Product Quantity</label>
-        <input
+        <Label htmlFor="productQuantity">Product Quantity</Label>
+
+        <Input
           className=""
           name="quantity"
           type="number"
@@ -92,9 +94,9 @@ export default function Page() {
           onBlur={blurHandler}
         />
         <p>{formStateError.quantity}</p>
-        <button type="submit" onClick={submitHandler} disabled={!isDisabled()}>
+        <Button type="submit" onClick={submitHandler} disabled={!isDisabled()}>
           submit
-        </button>
+        </Button>
       </form>
     </>
   );

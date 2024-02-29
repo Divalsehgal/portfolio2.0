@@ -1,5 +1,13 @@
 import Link from "next/link";
 import React from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type Props = {};
 
@@ -59,14 +67,22 @@ const questionsArray = [
   return (
     <div>
       {" "}
-      React Questions
       {questionsArray.map((snippets) => {
         return (
           <React.Fragment key={snippets?.id}>
             <Link href={`/practice/react-snippets/${snippets?.linkUrl}`}>
-              <div className="question">
-                <div className="title">{snippets?.file}</div>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{snippets?.file}</CardTitle>
+                  <CardDescription>Questions Description</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p></p>
+                </CardContent>
+                <CardFooter>
+                  <p></p>
+                </CardFooter>
+              </Card>
             </Link>
           </React.Fragment>
         );

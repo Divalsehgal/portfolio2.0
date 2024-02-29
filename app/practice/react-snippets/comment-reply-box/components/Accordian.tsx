@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type ChildrenProps = {
   title: string;
@@ -20,7 +21,7 @@ function Accordian({ children, childrenProps }: AccordianProps) {
 
   return (
     <div className="accordion-container">
-      <button
+      <Button
         onClick={toggleHandler}
         className={`accordion-button ${show ? "active" : ""}`}
       >
@@ -45,7 +46,7 @@ function Accordian({ children, childrenProps }: AccordianProps) {
             <ChevronDown />
           </div>
         )}
-      </button>
+      </Button>
       <div className={`accordion-content ${show ? "show" : ""}`}>
         {children}
       </div>

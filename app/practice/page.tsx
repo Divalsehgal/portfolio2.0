@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
@@ -6,8 +7,7 @@ type Props = {};
 function page({}: Props) {
   return (
     <div>
-      Practice
-      <Link href="/practice/react-snippets">React snippets</Link>
+      <Link href="/practice/react-snippets"><Button>React snippets</Button></Link>
 
     </div>
   );

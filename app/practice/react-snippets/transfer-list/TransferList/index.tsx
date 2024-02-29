@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { data } from "./data";
+import { Button } from "@/components/ui/button";
 
 export const TransferList = () => {
   const [array, setArray] = useState<any>(data);
@@ -89,7 +90,7 @@ export const TransferList = () => {
         >
           <h1>Table 1</h1>
           <div>
-            {array.map((m:any) => {
+            {array.map((m: any) => {
               return (
                 <div
                   key={m.id}
@@ -108,13 +109,13 @@ export const TransferList = () => {
           </div>
         </div>
 
-        <button onClick={buttonHandler} name="left">
+        <Button onClick={buttonHandler} name="left">
           left
-        </button>
+        </Button>
 
-        <button onClick={buttonHandler} name="right">
+        <Button onClick={buttonHandler} name="right">
           right
-        </button>
+        </Button>
 
         <div
           style={{
@@ -129,7 +130,7 @@ export const TransferList = () => {
             {array1.map((m) => {
               return (
                 <div
-                key={m.id}
+                  key={m.id}
                   style={{
                     border: "1px solid gray",
                     padding: "10px",
