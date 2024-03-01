@@ -9,7 +9,7 @@ function Page() {
   // Check if the current path is the home page (/)
   const isHomePage = pathname === "/";
   return (
-    <div className="text-tertiary-light h-full">
+    <div className="text-tertiary-light dark:text-tertiary-dark h-full">
       {isHomePage && <StarsCanvas />}
       <Home />
     </div>

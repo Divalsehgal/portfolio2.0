@@ -33,7 +33,7 @@ export default function RootLayout({
       <link rel="manifest" href="/manifest.json" />
       <body
         className={cn(
-          "min-h-screen bg-background bg-black font-sans antialiased",
+          "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans antialiased",
           inter.className
         )}
       >
