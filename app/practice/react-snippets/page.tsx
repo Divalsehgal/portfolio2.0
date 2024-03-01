@@ -65,7 +65,7 @@ const questionsArray = [
 ];
 
   return (
-    <div>
+    <div className="p-20 flex flex-col gap-3">
       {" "}
       {questionsArray.map((snippets) => {
         return (

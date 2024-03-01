@@ -1,7 +1,54 @@
-import type { Config } from "tailwindcss"
-const { fontFamily } = require("tailwindcss/defaultTheme")
+import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
-const config = {
+// Define interface for color variables
+interface Color {
+  light: string;
+  dark: string;
+}
+
+// Define interface for color scheme
+interface ColorScheme {
+  primary: Color;
+  secondary: Color;
+  tertiary: Color;
+}
+
+// Define interface for configuration object
+interface MyConfig extends Config {
+  theme: {
+    container: {
+      center: boolean;
+      padding: string;
+      screens: {
+        '2xl': string;
+      };
+    };
+    extend: {
+      keyframes: {
+        'accordion-down': {
+          from: { height: string };
+          to: { height: string };
+        };
+        'accordion-up': {
+          from: { height: string };
+          to: { height: string };
+        };
+      };
+      animation: {
+        'accordion-down': string;
+        'accordion-up': string;
+      };
+      fontFamily: {
+        sans: string[];
+      };
+      colors?: any; // Update type to match expected Tailwind CSS configuration
+    };
+  };
+}
+
+// Define configuration object
+const config: MyConfig = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -36,9 +83,23 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      colors: {
+        primary: {
+          light: "#EB5E55", // Light primary color
+          dark: "#333333", // Dark primary color
+        },
+        secondary: {
+          light: "#3A3335", // Light secondary color
+          dark: "#555555", // Dark secondary color
+        },
+        tertiary: {
+          light: "#FDF0D5", // Light tertiary color
+          dark: "#999999", // Dark tertiary color
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+};
 
-export default config
+export default config;

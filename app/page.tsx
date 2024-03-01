@@ -1,19 +1,19 @@
-import { PageHeader, PageHeaderDescription, PageHeaderHeading } from "@/components/ui/page-header";
+"use client";
 import React from "react";
+import Home from "@/components/ui/home";
+import StarsCanvas from "@/components/ui/stars-canvas";
+import { usePathname } from "next/navigation";
+function Page() {
+  const pathname = usePathname();
 
-type Props = {};
-
-function page({}: Props) {
+  // Check if the current path is the home page (/)
+  const isHomePage = pathname === "/";
   return (
-    <div>
-      <PageHeader>
-        <PageHeaderHeading>My Blog / Practice Questions</PageHeaderHeading>
-        <PageHeaderDescription>
-          Welcome here
-        </PageHeaderDescription>
-      </PageHeader>
+    <div className="text-tertiary-light h-full">
+      {isHomePage && <StarsCanvas />}
+      <Home />
     </div>
   );
 }
 
-export default page;
+export default Page;
