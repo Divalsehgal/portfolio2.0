@@ -40,7 +40,7 @@ export default function RootLayout({
         <div vaul-drawer-wrapper="">
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <Top />
+            {/* <Top /> */}
             <main className="flex-1 flex justify-center items-center">
               {children}
             </main>

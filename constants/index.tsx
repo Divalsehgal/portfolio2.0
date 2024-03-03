@@ -119,22 +119,22 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
+    title: "Sr. Frontend Engineer",
     company_name: "Starbucks",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Oct 21 - present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "MTS-3",
+    company_name: "Nineleaps",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2019 - Oct 2021",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",

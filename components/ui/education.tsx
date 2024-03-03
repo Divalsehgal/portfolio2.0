@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 function Education({}: Props) {
-  return <div className="section">Education</div>;
+  return ( <div className="">
+    <h1 className="mb-10">Education</h1>
+    <div className="section">Education</div>
+  </div>)
 }
 
-export default Education
+export default Education;
