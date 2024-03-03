@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.section {
+    @apply grid gap-4 p-4 border border-solid border-secondary-light dark:border-secondary-dark  bg-primary-light dark:bg-primary-dark;
+}
+
+
+.tech-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+}
+.project-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+}

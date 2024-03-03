@@ -58,7 +58,7 @@ const SiteHeader = () => {
 
   return (
     <header
-      className={`sticky w-full flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20 bg-primary-light dark:bg-primary-dark backdrop-blur supports-[backdrop-filter]:bg-primary-light/60  dark:supports-[backdrop-filter]:bg-primary-dark/60  ${
+      className={`sticky w-full flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20  backdrop-blur supports-[backdrop-filter]:bg-primary-light/20  dark:supports-[backdrop-filter]:bg-primary-dark/20  ${
         scrolled ? "bg-primary-light dark:bg-primary-dark" : "bg-transparent"
       }`}
     >

@@ -1,42 +1,28 @@
+import WorkExperience from "./work-experience";
+import Projects from "./projects";
+import Socials from "./socials";
+import Education from "./education";
+import ProfileImage from "./profile-image";
 import Tech from "./tech";
-import {
-  PageHeader,
-  PageHeaderHeading,
-  PageHeaderDescription,
-} from "./page-header";
-
-export function RightComponent() {
-
-
-    return (
-      <div className="md:w-7/12 flex flex-col justify-center items-center">
-        {/* Introduction */}
-        <PageHeader>
-          <PageHeaderHeading>My Name is Dival</PageHeaderHeading>
-          <PageHeaderDescription>
-            Welcome to my corner of the web, where I share my insights,
-            experiences, and projects.
-          </PageHeaderDescription>
-        </PageHeader>
-
-        {/* Skills logos */}
-        <Tech />
-      </div>
-    );
-}
-
-
-
-
-
-type Props = {};
+import AboutComponent from "./about-component";
 
 function Home() {
   return (
     <div className="flex md:justify-center md:items-center">
-      <div className="md:w-full md:flex md:justify-center md:items-center">
-    
-        <RightComponent />
+      <div className="flex flex-col gap-4 m-10 md:w-full md:grid md:grid-cols-2 md:p-20 md:gap-32">
+        {/* Image Component */}
+        <ProfileImage />
+        <AboutComponent />
+        {/* Work Experience */}
+        <WorkExperience />
+        {/* Projects */}
+        <Projects />
+        {/* Skills */}
+        <Tech />
+        {/* Education */}
+        <Education />
+        {/* Socials */}
+        <Socials />
       </div>
     </div>
   );

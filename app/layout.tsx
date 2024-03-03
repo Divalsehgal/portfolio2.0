@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import SiteHeader from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
-import Top from "@/components/top";
+import Top from "@/components/ui/top";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
       <link rel="manifest" href="/manifest.json" />
       <body
         className={cn(
-          "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans antialiased",
+          "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans box-border antialiased",
           inter.className
         )}
       >

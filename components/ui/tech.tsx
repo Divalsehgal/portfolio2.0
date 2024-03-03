@@ -1,17 +1,12 @@
-"use client";
 import React from "react";
 import { technologies } from "@/constants";
-import Image from "next/image";
+import SkillCard from "./skill-card";
 
 const Tech = () => {
   return (
-    <div className="flex justify-center gap-10 flex-wrap flex-row">
+    <div className="section tech-container w-90">
       {technologies.map((tech, index) => {
-        return (
-          <div className="w-8 h-8" key={tech?.name}>
-          <Image src={tech.icon}/>
-          </div>
-        );
+        return <SkillCard {...tech} />;
       })}
     </div>
   );
