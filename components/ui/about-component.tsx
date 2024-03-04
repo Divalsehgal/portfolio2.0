@@ -1,6 +1,6 @@
 export default function AboutComponent() {
   return (
-    <div className="section">
+    <div className="section-items">
       {/* Introduction */}
       <div className="text-center justify-evenly flex flex-col">
         <div className="text-xl">My Name is Dival</div>

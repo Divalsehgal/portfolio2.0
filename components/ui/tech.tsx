@@ -4,9 +4,9 @@ import SkillCard from "./skill-card";
 
 const Tech = () => {
   return (
-    <div className="section-title">
+    <div className="section-container">
       <div className="">Technical Skills</div>
-      <div className="section flex-wrap tech-container">
+      <div className="section-items flex-wrap tech-container">
         {technologies.map((tech, index) => {
           return <SkillCard {...tech} />;
         })}

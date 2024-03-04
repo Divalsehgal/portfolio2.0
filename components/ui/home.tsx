@@ -10,15 +10,14 @@ import Certification from "./certification";
 function Home() {
   return (
     <div className="flex md:justify-center md:items-center">
-
-      <div className="flex flex-col gap-4 m-10 md:flex-wrap md:flex  md:px-40 md:gap-16">
+      <div className="flex flex-col  gap-4 m-10 md:flex-wrap md:px-40 md:gap-16">
         {/* Image Component */}
-        <div className="flex justify-between  gap-6">
+        <div className=" md:flex md:justify-between md:gap-6">
           <ProfileImage />
           <AboutComponent />
         </div>
         {/* Work Experience */}
-        <div className="flex flex-col justify-center  gap-6">
+        <div className="md:flex flex-col md:justify-center  md:gap-6">
           <WorkExperience />
           {/* Projects */}
           <Projects />
@@ -27,7 +26,7 @@ function Home() {
         <Tech />
         {/* Education */}
 
-        <div className="flex gap-6">
+        <div className="md:flex md:gap-6">
           <Education />
 
           <Certification />

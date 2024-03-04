@@ -6,10 +6,10 @@ type Props = {};
 
 function WorkExperience({}: Props) {
   return (
-    <div className="section-title">
+    <div className="section-container">
       {" "}
       <div className="">Work Experience</div>
-      <div className="section flex">
+      <div className="section-items flex flex-col">
         {experiences.map((experience) => {
           return <ExperienceCard {...experience} />;
         })}

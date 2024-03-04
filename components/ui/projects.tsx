@@ -8,10 +8,10 @@ type Props = {};
 function Projects({}: Props) {
   console.log(projects);
   return (
-    <div className="section-title">
+    <div className="section-container">
       {" "}
       <div className="">Projects</div>
-      <div className="section flex flex-wrap">
+      <div className="section-items flex flex-wrap">
         {projects.map((project) => {
           return <ProjectCard {...project} />;
         })}
@@ -37,7 +37,11 @@ const ProjectCard = ({
     >
       <Link href={source_code_link}>
         <div className="">
-          <Image className="rounded-t-md h-36 w-full object-cover" src={image} alt="" />
+          <Image
+            className="rounded-t-md h-36 w-full object-cover"
+            src={image}
+            alt=""
+          />
         </div>
 
         <div className="p-1 w-80">
