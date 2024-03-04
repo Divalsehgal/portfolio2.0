@@ -86,15 +86,15 @@ const config: MyConfig = {
       colors: {
         primary: {
           dark: "#061A40", // Light primary color
-          light: "#C03221", // Dark primary color
+          light: "#459092", // Dark primary color
         },
         secondary: {
           dark: "#0353A4", // Light secondary color
-          light: "#F2D0A4", // Dark secondary color
+          light: "#7BAFB1", // Dark secondary color
         },
         tertiary: {
           dark: "#B9D6F2", // Light tertiary color
-          light: "#F7F7FF", // Dark tertiary color
+          light: "#E7ECEF", // Dark tertiary color
         },
       },
     },

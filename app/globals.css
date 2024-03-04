@@ -5,13 +5,22 @@
 
 
 .section {
-    @apply grid gap-4 p-4 border border-solid border-secondary-light dark:border-secondary-dark  bg-primary-light dark:bg-primary-dark;
+    @apply flex gap-4  p-4 border border-solid border-secondary-light dark:border-secondary-dark bg-primary-light dark:bg-primary-dark;
+}
+
+.section-title {
+    @apply flex  flex-col gap-6;
 }
 
 
 .tech-container {
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
 }
+
+.social-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 275px));
+}
+
 .project-container {
     grid-template-columns: repeat(auto-fill, minmax(150px, auto));
 }

@@ -8,10 +8,10 @@ type Props = {};
 function Projects({}: Props) {
   console.log(projects);
   return (
-    <div className="grid">
+    <div className="section-title">
       {" "}
       <div className="">Projects</div>
-      <div className="section project-container">
+      <div className="section flex flex-wrap">
         {projects.map((project) => {
           return <ProjectCard {...project} />;
         })}
@@ -33,14 +33,14 @@ const ProjectCard = ({
   return (
     <div
       key={id}
-      className="flex flex-col bg-secondary-light dark:bg-secondary-dark rounded-t-md"
+      className="flex flex-grow flex-col bg-secondary-light dark:bg-secondary-dark rounded-t-md"
     >
       <Link href={source_code_link}>
         <div className="">
-          <Image className="rounded-t-md h-1/5" src={image} alt="" />
+          <Image className="rounded-t-md h-36 w-full object-cover" src={image} alt="" />
         </div>
 
-        <div className="p-2">
+        <div className="p-1 w-80">
           <div>{name}</div>
           <div className="whitespace-nowrap overflow-hidden text-ellipsis">
             {description}

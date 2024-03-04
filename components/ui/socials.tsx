@@ -1,16 +1,37 @@
+import { socialLinks } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
 
 function Socials({}: Props) {
   return (
-    <div className="col-span-2 ">
-      <h1 className="mb-10">Socials</h1>
-      <div className="grid gap-4 p-4  border border-solid border-secondary-light dark:border-secondary-dark justify-self-stretch self-stretch bg-primary-light dark:bg-primary-dark">
-        Socials
+    <div className="section-title">
+      <h1 className="mb-4 text-center">Socials</h1>
+      <div className="section">
+        {socialLinks.map((socialLink) => {
+          return <SocialCard {...socialLink} />;
+        })}
       </div>
-    </div>
+     </div>
   );
 }
 
 export default Socials;
+
+const SocialCard = ({ platform, link, iconUrl }: any) => {
+  return (
+    <div
+      className="w-full bg-secondary-light dark:bg-secondary-dark text-sm"
+      key={platform}
+    >
+      <Link href={link}>
+        <div className="flex flex-row ">
+          <Image src={iconUrl} alt={platform} width={60} height={60} />
+          <div className="flex-1">{platform}</div>
+        </div>
+      </Link>
+    </div>
+  );
+};

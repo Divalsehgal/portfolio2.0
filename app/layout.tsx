@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Chivo_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SiteHeader from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import Top from "@/components/ui/top";
 
-const inter = Inter({ subsets: ["latin"] });
+const chivoMono = Chivo_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dival Sehgal",
@@ -34,7 +34,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans box-border antialiased",
-          inter.className
+          chivoMono.className
         )}
       >
         <div vaul-drawer-wrapper="">

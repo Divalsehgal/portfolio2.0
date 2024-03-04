@@ -142,6 +142,29 @@ const experiences = [
   }
 ];
 
+const education = [
+  {
+    id:1,
+    title: "B.Tech in Computer Science",
+    institution: "Your University Name",
+    date: "2015-2019",
+    grade: "7 Pointer",
+
+  },
+  {id:2,
+    title: "Senior Secondary (12th Grade) - Non-Medical",
+    institution: "Your School Name",
+    date: "2014-2015",
+    grade: "86%",
+  },
+  {
+    id:3,
+    title: "Secondary (10th Grade)",
+    institution: "Your School Name",
+    date: "2012-2013",
+    grade: "92%",
+
+  }]
 const testimonials = [
   {
     testimonial:
@@ -167,6 +190,61 @@ const testimonials = [
     company: "456 Enterprises",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
+];
+const socialLinks = [
+  {
+    platform: "Instagram",
+    link: "https://www.instagram.com/your_username/",
+    iconUrl: creator,
+  },
+  {
+    platform: "GitHub",
+    link: "https://github.com/your_username",
+    iconUrl: web,
+  },
+  {
+    platform: "Stack Overflow",
+    link: "https://stackoverflow.com/users/your_user_id",
+    iconUrl: javascript,
+  },
+  {
+    platform: "Gmail",
+    link: "mailto:your_email@example.com",
+    iconUrl: mongodb,
+  },
+];
+
+const certifications = [
+  {
+    id: 1,
+    name: "JavaScript Certification",
+    link: "https://www.example.com/javascript-cert",
+    description:
+      "Certification in JavaScript programming language covering advanced concepts such as closures, prototypes, and asynchronous programming.",
+  },
+  {
+    id: 2,
+    name: "Python for Data Science",
+    link: "https://www.example.com/python-data-science-cert",
+    description:
+      "Certification course covering Python programming language for data science applications including data manipulation, visualization, and analysis.",
+  },
+
+  {
+    id: 3,
+    name: "AWS Certified Solutions Architect",
+    link: "https://www.example.com/aws-certified-solutions-architect",
+    description:
+      "Certification demonstrating proficiency in designing distributed systems and applications on the Amazon Web Services (AWS) platform.",
+  },
+  {
+    id: 4,
+    name: "AWS Certified Solutions Architect",
+    link: "https://www.example.com/aws-certified-solutions-architect",
+    description:
+      "Certification demonstrating proficiency in designing distributed systems and applications on the Amazon Web Services (AWS) platform.",
+  },
+  // Add more certifications as needed
 ];
 
 const projects = [
@@ -238,4 +316,13 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  education,
+  socialLinks,
+  certifications
+};

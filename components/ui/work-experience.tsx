@@ -6,10 +6,10 @@ type Props = {};
 
 function WorkExperience({}: Props) {
   return (
-    <div className="flex flex-col">
+    <div className="section-title">
       {" "}
-      <h1 className="mb-10">Work Experience</h1>
-      <div className="section">
+      <div className="">Work Experience</div>
+      <div className="section flex">
         {experiences.map((experience) => {
           return <ExperienceCard {...experience} />;
         })}
@@ -22,7 +22,7 @@ export default WorkExperience;
 
 const ExperienceCard = ({ title, company_name, icon, date, points }: any) => {
   return (
-    <div className="flex bg-secondary-light gap-4 dark:bg-secondary-dark p-2">
+    <div className="flex h-1/2 bg-secondary-light gap-4 dark:bg-secondary-dark p-2">
       <div className="flex">
         <Image src={icon} alt={title} className="object-contain h-32 w-32" />
       </div>
