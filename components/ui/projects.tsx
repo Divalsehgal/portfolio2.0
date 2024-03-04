@@ -10,8 +10,8 @@ function Projects({}: Props) {
   return (
     <div className="section-container">
       {" "}
-      <div className="">Projects</div>
-      <div className="section-items flex flex-wrap">
+      <div className="pl-3">Projects</div>
+      <div className="section-items flex-wrap">
         {projects.map((project) => {
           return <ProjectCard {...project} />;
         })}

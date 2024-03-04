@@ -8,8 +8,8 @@ function WorkExperience({}: Props) {
   return (
     <div className="section-container">
       {" "}
-      <div className="">Work Experience</div>
-      <div className="section-items flex flex-col">
+      <div className="pl-3">Work Experience</div>
+      <div className="section-items flex-col">
         {experiences.map((experience) => {
           return <ExperienceCard {...experience} />;
         })}

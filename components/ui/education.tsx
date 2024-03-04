@@ -7,13 +7,13 @@ type Props = {};
 function Education({}: Props) {
   return (
     <div className="section-container">
-      <div className="">Education</div>
+      <div className="pl-3">Education</div>
       <div className="section-items flex-col">
         {education.map((edu) => {
           return <EducationCard {...edu} />;
         })}
       </div>
-     </div>
+    </div>
   );
 }
 

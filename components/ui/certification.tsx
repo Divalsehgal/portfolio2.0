@@ -7,8 +7,8 @@ type Props = {};
 function Certification({}: Props) {
   return (
     <div className="section-container">
-      <div className="">Certifications</div>
-      <div className="section-items">
+      <div className="pl-3">Certifications</div>
+      <div className="section-items flex-col">
         {certifications.map((cert) => {
           return <CertificationCard {...cert} />;
         })}
