@@ -21,7 +21,7 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head />
       <link
         rel="apple-touch-icon"
@@ -32,6 +32,7 @@ export default function RootLayout({
       <meta name="theme-color" content="#ffffff" />
       <link rel="manifest" href="/manifest.json" />
       <body
+        suppressHydrationWarning={true}
         className={cn(
           "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans box-border antialiased",
           chivoMono.className

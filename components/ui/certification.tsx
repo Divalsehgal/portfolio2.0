@@ -10,7 +10,7 @@ function Certification({}: Props) {
       <div className="pl-3">Certifications</div>
       <div className="section-items flex-col">
         {certifications.map((cert) => {
-          return <CertificationCard {...cert} />;
+          return <CertificationCard {...cert} key={cert.id} />;
         })}
       </div>
     </div>

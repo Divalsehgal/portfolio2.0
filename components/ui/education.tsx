@@ -9,7 +9,7 @@ function Education({}: Props) {
       <div className="pl-3">Education</div>
       <div className="section-items flex-col">
         {education.map((edu) => {
-          return <EducationCard {...edu} />;
+          return <EducationCard {...edu} key={edu.id} />;
         })}
       </div>
     </div>

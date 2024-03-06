@@ -4,7 +4,6 @@ import { FileProps } from "../files";
 
 const Folder  = (props: FileProps) => {
   const { name, isFolder, children } = props;
-  console.log(props)
   const [open, setOpen] = useState(false);
   return (
     <>

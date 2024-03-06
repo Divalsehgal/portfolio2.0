@@ -8,7 +8,7 @@ const Tech = () => {
       <div className="pl-3">Technical Skills</div>
       <div className="section-items flex-wrap">
         {technologies.map((tech, index) => {
-          return <SkillCard {...tech} />;
+          return <SkillCard {...tech} key={tech.id} />;
         })}
       </div>
     </div>

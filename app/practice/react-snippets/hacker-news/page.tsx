@@ -47,7 +47,6 @@ export default function Page() {
       setIsFetching(true);
       timer = setTimeout(async () => {
         const temp: Promise<Response>[] = [];
-        console.log(startIndex, endIndex);
 
         total.slice(startIndex, endIndex).forEach((m) => {
           temp.push(

@@ -6,14 +6,13 @@ import React from "react";
 type Props = {};
 
 function Projects({}: Props) {
-  console.log(projects);
   return (
     <div className="section-container">
       {" "}
       <div className="pl-3">Projects</div>
       <div className="section-items flex-wrap">
         {projects.map((project) => {
-          return <ProjectCard {...project} />;
+          return <ProjectCard {...project} key={project.id}/>;
         })}
       </div>
     </div>

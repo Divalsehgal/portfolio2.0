@@ -15,14 +15,11 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
-  threejs,
+  landmarkgroup,
+  nineleaps,
 } from "../public/assets";
 
 export const navLinks = [
@@ -63,55 +60,59 @@ const services = [
 ];
 
 const technologies = [
+  { id: 1, name: "HTML 5", icon: html },
   {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
+    id: 2,
     name: "CSS 3",
     icon: css,
   },
   {
+    id: 3,
     name: "JavaScript",
     icon: javascript,
   },
   {
+    id: 4,
     name: "TypeScript",
     icon: typescript,
   },
   {
+    id: 5,
     name: "React JS",
     icon: reactjs,
   },
   {
+    id: 6,
     name: "Redux Toolkit",
     icon: redux,
   },
   {
+    id: 7,
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
+    id: 8,
     name: "Node JS",
     icon: nodejs,
   },
   {
+    id: 9,
     name: "MongoDB",
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
+    id: 10,
     name: "git",
     icon: git,
   },
   {
+    id: 11,
     name: "figma",
     icon: figma,
   },
   {
+    id: 12,
     name: "docker",
     icon: docker,
   },
@@ -119,10 +120,10 @@ const technologies = [
 
 const experiences = [
   {
+    id: 1,
     title: "Sr. Frontend Engineer",
     company_name: "LandmarkGroup",
-    icon: starbucks,
-    iconBg: "#383E56",
+    icon: landmarkgroup,
     date: "Oct 21 - present",
     points: [
       "Led front-end activities for Landmark groups (HomeCentre, LifeStyle, MaxFashion), boosting user engagement by 30%.",
@@ -131,10 +132,10 @@ const experiences = [
     ],
   },
   {
+    id: 2,
     title: "MTS-3",
     company_name: "Nineleaps",
-    icon: tesla,
-    iconBg: "#E6DEDD",
+    icon: nineleaps,
     date: "Jun 2019 - Oct 2021",
     points: [
       "Developed a React.js and Redux-based shuttle service app with ride-sharing and seat allocation.",
@@ -195,21 +196,25 @@ const testimonials = [
 ];
 const socialLinks = [
   {
+    id: 1,
     platform: "Instagram",
     link: "https://www.instagram.com/your_username/",
     iconUrl: creator,
   },
   {
+    id: 2,
     platform: "GitHub",
     link: "https://github.com/your_username",
     iconUrl: web,
   },
   {
+    id: 3,
     platform: "Stack Overflow",
     link: "https://stackoverflow.com/users/your_user_id",
     iconUrl: javascript,
   },
   {
+    id: 4,
     platform: "Gmail",
     link: "mailto:your_email@example.com",
     iconUrl: mongodb,
