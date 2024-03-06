@@ -120,13 +120,14 @@ const technologies = [
 const experiences = [
   {
     title: "Sr. Frontend Engineer",
-    company_name: "Starbucks",
+    company_name: "LandmarkGroup",
     icon: starbucks,
     iconBg: "#383E56",
     date: "Oct 21 - present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Led front-end activities for Landmark groups (HomeCentre, LifeStyle, MaxFashion), boosting user engagement by 30%.",
+      "Managed Shukran Delivery Project, achieving 25% increase in on-time deliveries through store integration.",
+      "Optimized search capabilities in Hybris Java backend for 20% decrease in bounce rate using Algolia APIs and performance optimization techniques.",
     ],
   },
   {
@@ -136,35 +137,36 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Jun 2019 - Oct 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Developed a React.js and Redux-based shuttle service app with ride-sharing and seat allocation.",
+      "Enhanced operational efficiency by implementing admin dashboard features for cab bookings and allocations.",
+      "Created KYC-dashboard for Stanza Living and role-based routing for Narayan Edtech, improving management and user experience.",
     ],
-  }
+  },
 ];
 
 const education = [
   {
-    id:1,
+    id: 1,
     title: "B.Tech in Computer Science",
     institution: "Your University Name",
     date: "2015-2019",
     grade: "7 Pointer",
-
   },
-  {id:2,
+  {
+    id: 2,
     title: "Senior Secondary (12th Grade) - Non-Medical",
     institution: "Your School Name",
     date: "2014-2015",
     grade: "86%",
   },
   {
-    id:3,
+    id: 3,
     title: "Secondary (10th Grade)",
     institution: "Your School Name",
     date: "2012-2013",
     grade: "92%",
-
-  }]
+  },
+];
 const testimonials = [
   {
     testimonial:
@@ -324,5 +326,5 @@ export {
   projects,
   education,
   socialLinks,
-  certifications
+  certifications,
 };

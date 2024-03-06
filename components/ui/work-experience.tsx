@@ -27,20 +27,23 @@ const ExperienceCard = ({ title, company_name, icon, date, points }: any) => {
         <Image src={icon} alt={title} className="object-contain h-32 w-32" />
       </div>
       <div className="flex flex-col justify-evenly">
-        <div className="flex items-baseline gap-6">
-          <div className="text-base">{title}</div>
-          <div className="text-sm">{company_name}</div>
-          <div className="text-xs">{date}</div>
+        <div className="flex items-center gap-6 justify-between">
+          <div className="">
+            <div className="text-base">{title}</div>
+            <div className="text-sm">{company_name}</div>
+          </div>
+          <div className="text-xs flex-end pr-2">{date}</div>
         </div>
-        <div>
+        <ul className="list-none">
           {points.map((m: string) => {
             return (
-              <div className="text-xs" key={m}>
+              <li className="flex items-center text-xs" key={m}>
+                <span className="mr-2">&#8226;</span>
                 {m}
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </div>
   );

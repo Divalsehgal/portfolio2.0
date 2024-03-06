@@ -14,7 +14,7 @@ function Socials({}: Props) {
           return <SocialCard {...socialLink} />;
         })}
       </div>
-     </div>
+    </div>
   );
 }
 
@@ -27,9 +27,9 @@ const SocialCard = ({ platform, link, iconUrl }: any) => {
       key={platform}
     >
       <Link href={link}>
-        <div className="flex flex-row ">
+        <div className="flex flex-row items-center gap-2">
           <Image src={iconUrl} alt={platform} width={60} height={60} />
-          <div className="flex-1">{platform}</div>
+          <div className="flex-1 hidden md:flex">{platform}</div>
         </div>
       </Link>
     </div>

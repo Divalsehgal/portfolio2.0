@@ -1,5 +1,4 @@
-import { certifications, education } from "@/constants";
-import Link from "next/link";
+import { education } from "@/constants";
 import React from "react";
 
 type Props = {};
@@ -22,11 +21,11 @@ export default Education;
 const EducationCard = ({ title, institution, date, grade, id }: any) => {
   return (
     <div
-      className="flex bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
+      className="flex flex-1 bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
       key={id}
     >
       <div className="flex flex-col justify-evenly">
-        <div className="flex items-baseline gap-6">
+        <div className="flex gap-6">
           <div className="text-base">{title}</div>
           <div className="text-sm">{institution}</div>
           <div className="text-xs">{date}</div>

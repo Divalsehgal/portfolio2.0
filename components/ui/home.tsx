@@ -12,12 +12,12 @@ function Home() {
     <div className="flex md:justify-center md:items-center">
       <div className="flex flex-col  gap-4 m-10 md:flex-wrap md:px-40 md:gap-16">
         {/* Image Component */}
-        <div className=" md:flex md:justify-between md:gap-6">
+        <div className="flex items-center flex-col xs:flex-col xs:gap-4 xs:items-center md:flex-row md:justify-between md:gap-6">
           <ProfileImage />
           <AboutComponent />
         </div>
         {/* Work Experience */}
-        <div className="md:flex flex-col md:justify-center  md:gap-6">
+        <div className="flex flex-col md:justify-center gap-4 md:gap-6">
           <WorkExperience />
           {/* Projects */}
           <Projects />
@@ -26,7 +26,7 @@ function Home() {
         <Tech />
         {/* Education */}
 
-        <div className="md:flex md:gap-6">
+        <div className="flex flex-col gap-4 md:gap-6">
           <Education />
 
           <Certification />

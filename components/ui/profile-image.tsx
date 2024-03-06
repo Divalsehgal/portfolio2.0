@@ -5,7 +5,7 @@ type Props = {};
 
 function ProfileImage({}: Props) {
   return (
-    <div className="section-items place-content-center">
+    <div className="section-items w-max">
       <Image src={profile} alt="profile_image" width={200} height={200} />
     </div>
   );

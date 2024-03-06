@@ -11,3 +11,15 @@
     @apply flex flex-col gap-6;
 }
 
+.superscript {
+    position: relative;
+    display: inline-block;
+}
+
+.superscript::before {
+    content: "+";
+    position: absolute;
+    top: -0.4em;
+    left: 2.2em;
+    font-size: smaller;
+}

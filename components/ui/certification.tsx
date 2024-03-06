@@ -26,8 +26,7 @@ const CertificationCard = ({ title, description, link, id }: any) => {
     >
       <Link href={link}>
         <div className="flex flex-col justify-evenly">
-          <div className="flex items-baseline gap-6">
-            <div className="text-base">{title}</div>
+          <div className="flex items-center gap-6">
             <div className="text-sm">{description}</div>
           </div>
         </div>
