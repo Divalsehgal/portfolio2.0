@@ -9,7 +9,7 @@ type Props = {};
 function Socials({}: Props) {
   return (
     <div className="section-container">
-      <h1 className="mb-4 text-center">Socials</h1>
+      <h1 className="mb-4 text-center md:text-left">Socials</h1>
       <div className="section-items">
         {socialLinks.map((socialLink) => {
           return <SocialCard {...socialLink} key={socialLink.platform} />;

@@ -7,8 +7,8 @@ type Props = {};
 function Certification({}: Props) {
   return (
     <div className="section-container">
-      <div className="pl-3">Certifications</div>
-      <div className="section-items flex-col">
+      <div className="pl-3 text-center md:text-left">Certifications</div>
+      <div className="section-items flex-wrap">
         {certifications.map((cert) => {
           return <CertificationCard {...cert} key={cert.id} />;
         })}
@@ -18,16 +18,20 @@ function Certification({}: Props) {
 }
 
 export default Certification;
-const CertificationCard = ({ title, description, link, id }: any) => {
+const CertificationCard = ({ name, link, id }: any) => {
+  const highlightName = name.split(" ")[0];
+  const restName = name.slice(highlightName.length);
+  console.log(restName);
   return (
     <div
-      className="flex bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
+      className="md:w-max flex-grow bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
       key={id}
     >
       <Link href={link}>
-        <div className="flex flex-col justify-evenly">
-          <div className="flex items-center gap-6">
-            <div className="text-sm">{description}</div>
+        <div className="flex items-center gap-6">
+          <div className="text-base">
+            <span className="text-primary-light text-xl ">{highlightName}</span>
+            {restName}
           </div>
         </div>
       </Link>

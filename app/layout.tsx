@@ -18,8 +18,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head />
@@ -34,7 +32,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={cn(
-          "min-h-screen bg-background bg-black dark:bg-primary-dark font-sans box-border antialiased",
+          "min-h-screen bg-background bg-black  font-sans box-border antialiased",
           chivoMono.className
         )}
       >

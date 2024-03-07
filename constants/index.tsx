@@ -149,21 +149,21 @@ const education = [
   {
     id: 1,
     title: "B.Tech in Computer Science",
-    institution: "Your University Name",
+    institution: "Jaypee University Of Informtaion University",
     date: "2015-2019",
-    grade: "7 Pointer",
+    grade: "7.0",
   },
   {
     id: 2,
     title: "Senior Secondary (12th Grade) - Non-Medical",
-    institution: "Your School Name",
+    institution: "Him Academy Public School",
     date: "2014-2015",
     grade: "86%",
   },
   {
     id: 3,
     title: "Secondary (10th Grade)",
-    institution: "Your School Name",
+    institution: "Him Academy Public School",
     date: "2012-2013",
     grade: "92%",
   },
@@ -224,34 +224,30 @@ const socialLinks = [
 const certifications = [
   {
     id: 1,
-    name: "JavaScript Certification",
-    link: "https://www.example.com/javascript-cert",
-    description:
-      "Certification in JavaScript programming language covering advanced concepts such as closures, prototypes, and asynchronous programming.",
+    link: "https://www.hackerrank.com/certificates/af0a7e164183",
+    name: "Frontend Developer (React) Certificate",
   },
   {
     id: 2,
-    name: "Python for Data Science",
-    link: "https://www.example.com/python-data-science-cert",
-    description:
-      "Certification course covering Python programming language for data science applications including data manipulation, visualization, and analysis.",
+    name: "JavaScript algorithms and Data Structures",
+    link: "https://www.freecodecamp.org/certification/dival/javascript-algorithms-and-data-structures",
   },
 
   {
     id: 3,
-    name: "AWS Certified Solutions Architect",
-    link: "https://www.example.com/aws-certified-solutions-architect",
-    description:
-      "Certification demonstrating proficiency in designing distributed systems and applications on the Amazon Web Services (AWS) platform.",
+    name: "JavaScript (Basic)",
+    link: "https://www.hackerrank.com/certificates/d5c77201a992",
   },
   {
     id: 4,
-    name: "AWS Certified Solutions Architect",
-    link: "https://www.example.com/aws-certified-solutions-architect",
-    description:
-      "Certification demonstrating proficiency in designing distributed systems and applications on the Amazon Web Services (AWS) platform.",
+    name: "React-Redux Bootcamp certification",
+    link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-f7eab77e-0b34-4973-a5ee-f387a8daa459.pdf",
   },
-  // Add more certifications as needed
+  {
+    id: 5,
+    name: "React-Native Practical guide certification",
+    link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-e6f1923a-a5c8-47bb-ba0e-cbbf98c2523b.pdf",
+  },
 ];
 
 const projects = [

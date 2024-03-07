@@ -10,6 +10,7 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import ProgressBar from "./progress-bar";
 
 const SiteHeader = () => {
   const [active, setActive] = useState("");
@@ -62,6 +63,7 @@ const SiteHeader = () => {
         scrolled ? "bg-primary-light dark:bg-primary-dark" : "bg-transparent"
       }`}
     >
+      <ProgressBar />
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
           href="/"
