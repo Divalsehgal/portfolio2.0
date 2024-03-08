@@ -72,7 +72,7 @@ export default function Page() {
 
   return (
     <>
-      <form>
+      <form className="text-tertiary-light dark:text-tertiary-dark">
         <Label htmlFor="productName">Product Name</Label>
         <Input
           className=""

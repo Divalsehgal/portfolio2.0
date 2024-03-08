@@ -49,7 +49,7 @@ const MentionBox = (props:any) => {
   }
 
   return (
-    <div>
+    <div className="text-tertiary-light dark:text-tertiary-dark">
       <Input value={inputValue} onChange={handleChange} />
       {showOptions && (
         <OptionsBox options={mentionOptions} onSelect={handleSelect} />

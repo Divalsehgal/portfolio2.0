@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
 
 .section-items {
     @apply flex gap-4 p-4 m-2 border border-solid border-secondary-light dark:border-secondary-dark bg-primary-light dark:bg-primary-dark;

@@ -44,7 +44,7 @@ export default function Page() {
   }, [boxState]);
 
   return (
-    <div className="h-screen bg-gradient-to-br from-purple-700 to-blue-700 items-center justify-center flex flex-col">
+    <div className="h-screen items-center justify-center flex flex-col text-tertiary-light dark:text-tertiary-dark">
       <Checkbox
         id="select all"
         label={"select all"}

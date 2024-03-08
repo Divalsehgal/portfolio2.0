@@ -24,6 +24,12 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import landmarkgroup from "./company/landmarkgroup.png";
 import nineleaps from "./company/nineleaps.png";
+import stackoverflow from "./social/stackoverflow.png";
+
+import linkedin from "./social/linkedin.png";
+import instagram from "./social/instagram.png";
+import gmail from "./social/gmail.png";
+import github1 from "./social/github.png";
 
 export {
   logo,
@@ -49,5 +55,11 @@ export {
   carrent,
   jobit,
   tripguide,
-  nineleaps,landmarkgroup
+  nineleaps, landmarkgroup,
+  stackoverflow,
+  linkedin,
+  github1,
+  gmail,
+  instagram
+
 };

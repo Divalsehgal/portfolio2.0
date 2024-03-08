@@ -129,7 +129,7 @@ const SiteHeader = () => {
                         setActive(nav.title);
                       }}
                     >
-                      <a href={`${nav.id}`}>{nav.title}</a>
+                      <a href={`${nav.linkUrl}`}>{nav.title}</a>
                     </div>
                   ))}
                 </div>

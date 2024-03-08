@@ -1,14 +1,35 @@
+import { portfolioLinks } from "@/constants";
+import Link from "next/link";
+
 export default function AboutComponent() {
   return (
     <div className="section-items">
       {/* Introduction */}
-      <div className="text-center justify-evenly flex flex-col">
-        <div className="text-xl">My Name is Dival</div>
+      <div className="text-center justify-evenly flex flex-col gap-4">
+        <div className="text-2xl font-bold">My Name is Dival Sehgal</div>
         <div className="text-center">
-          Welcome to my corner of the web, where I share my insights,
-          experiences, and projects.
+          I am a full stack developer having 4+ years of experinace. Welcome to
+          my corner of the web, where I share my insights, experiences, and
+          projects.
+        </div>
+        <div className="flex gap-4 flex-wrap justify-center">
+          {portfolioLinks.map((m) => {
+            return <LinkItem {...m} key={m.id} />;
+          })}
         </div>
       </div>
     </div>
   );
 }
+
+const LinkItem = (m: any) => {
+  return (
+    <Link
+      key={m.id}
+      className="underline text-xl text-tertiary-light dark:text-tertiary-dark"
+      href={`#${m.link}`}
+    >
+      {m?.name}
+    </Link>
+  );
+};

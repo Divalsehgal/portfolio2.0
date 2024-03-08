@@ -6,9 +6,11 @@ type Props = {};
 
 function WorkExperience({}: Props) {
   return (
-    <div className="section-container">
+    <div className="section-container" id="work-experiance">
       {" "}
-      <div className="pl-3 text-center md:text-left">Work Experience</div>
+      <div className="pl-3 text-center md:text-left font-bold">
+        Work Experience
+      </div>
       <div className="section-items flex-col">
         {experiences.map((experience: any) => {
           return <ExperienceCard {...experience} key={experience?.id} />;
@@ -43,7 +45,7 @@ const ExperienceCard = ({
       <div className="flex gap-4 md:gap-2 flex-col justify-evenly">
         <div className="flex items-baseline md:items-center gap-6 justify-between">
           <div className="px-4 md:px-0">
-            <div className="text-base">{title}</div>
+            <div className="text-base font-semibold">{title}</div>
             <div className="text-sm">{company_name}</div>
           </div>
           <div className="text-xs flex-end pr-2">{date}</div>

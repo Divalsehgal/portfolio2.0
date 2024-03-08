@@ -6,10 +6,9 @@ import { TransferList } from "./TransferList";
 
 export default function page() {
   return (
-    <div>
+    <div className="text-teritary-light dark:text-tertiary-dark">
       <div className="container">
         <h1 className="text-xl font-bold">Transfer List</h1>
-        <p>Read the description to start solving the problem. 💯</p>
         <TransferList />
       </div>
     </div>

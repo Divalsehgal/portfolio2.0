@@ -39,14 +39,16 @@ export default function Page() {
     setStart(false);
     setPdata("please start generating...");
   };
-
+  
 
   return (
-    <div>
+    <div className="text-tertiary-light dark:text-tertiary-dark">
       <Button onClick={resetHandler}>reset</Button>
       <Button onClick={clickHandler}>start generating</Button>
 
-      <div className="generated-text-box">{pdata}</div>
+      <div className="h-96 w-full border  bg-primary-light dark:bg-primary-dark">
+        {pdata}
+      </div>
     </div>
   );
 }

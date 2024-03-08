@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import SiteHeader from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
 import Top from "@/components/ui/top";
+import ScrollButton from "@/components/ui/scroll-button";
 
 const chivoMono = Chivo_Mono({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         <div vaul-drawer-wrapper="">
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
+            <ScrollButton/>
             {/* <Top /> */}
             <main className="flex-1 flex justify-center items-center">
               {children}

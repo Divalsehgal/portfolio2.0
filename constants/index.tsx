@@ -20,6 +20,12 @@ import {
   tripguide,
   landmarkgroup,
   nineleaps,
+  gmail,
+  linkedin,
+  stackoverflow,
+  github1,
+  instagram,
+  github,
 } from "../public/assets";
 
 export const navLinks = [
@@ -168,56 +174,37 @@ const education = [
     grade: "92%",
   },
 ];
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
-];
+
 const socialLinks = [
   {
     id: 1,
-    platform: "Instagram",
-    link: "https://www.instagram.com/your_username/",
-    iconUrl: creator,
+    platform: "GitHub",
+    link: "https://github.com/Divalsehgal",
+    iconUrl: github,
   },
   {
     id: 2,
-    platform: "GitHub",
-    link: "https://github.com/your_username",
-    iconUrl: web,
+    platform: "Stack Overflow",
+    link: "https://stackoverflow.com/users/10756134/dival-sehgal",
+    iconUrl: stackoverflow,
   },
   {
     id: 3,
-    platform: "Stack Overflow",
-    link: "https://stackoverflow.com/users/your_user_id",
-    iconUrl: javascript,
+    platform: "Gmail",
+    link: "mailto:sehgaldival@gmail.com",
+    iconUrl: gmail,
   },
   {
     id: 4,
-    platform: "Gmail",
-    link: "mailto:your_email@example.com",
-    iconUrl: mongodb,
+    platform: "Linkedin",
+    link: "https://www.linkedin.com/in/divalsehgal/",
+    iconUrl: linkedin,
+  },
+  {
+    id: 5,
+    platform: "Instagram",
+    link: "https://www.instagram.com/divalsehgal/",
+    iconUrl: instagram,
   },
 ];
 
@@ -319,13 +306,91 @@ const projects = [
   },
 ];
 
+const questionsArray = [
+  {
+    id: "1",
+    file: "Type Writer Effect",
+    linkUrl: "type-writer-effect",
+  },
+  {
+    id: "2",
+    file: "Hacker News",
+    linkUrl: "hacker-news",
+  },
+  ,
+  {
+    id: "3",
+    file: "Form Validation",
+    linkUrl: "form-validation",
+  },
+  ,
+  {
+    id: "4",
+    file: "All CheckBoxes",
+    linkUrl: "all-checkboxes",
+  },
+  ,
+  {
+    id: "5",
+    file: "CountDown Timer",
+    linkUrl: "timer",
+  },
+  {
+    id: "6",
+    file: "Transfer List",
+    linkUrl: "transfer-list",
+  },
+  {
+    id: "7",
+    file: "Mention Box",
+    linkUrl: "mention-box",
+  },
+  {
+    id: "8",
+    file: "Folder Structure",
+    linkUrl: "folder-structure",
+  },
+  {
+    id: "9",
+    file: "Comment Reply Box",
+    linkUrl: "comment-reply-box",
+  },
+];
+ const portfolioLinks=[{
+  id:1,
+  name:"Projects",
+  link:"projects"
+ },
+ {
+  id:2,
+  name:"Education",
+  link:"education"
+ },
+ {
+  id:3,
+  name:"Certification",
+  link:"certifications"
+ },
+ {
+  id:4,
+  name:"Technical",
+  link:"technical"
+ },
+  {
+  id:5,
+  name:"Social",
+  link:"social"
+ }
+]
+
 export {
   services,
   technologies,
   experiences,
-  testimonials,
   projects,
   education,
   socialLinks,
   certifications,
+  questionsArray,
+  portfolioLinks
 };

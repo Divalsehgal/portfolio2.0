@@ -1,8 +1,7 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
-
 
 export default function Page() {
   const [time, setTime] = useState({ minutes: 0 });
@@ -36,7 +35,7 @@ export default function Page() {
   };
 
   useEffect(() => {
-    let timer:any = 0;
+    let timer: any = 0;
     if (start && time.minutes > 0 && !pause) {
       timer = setInterval(() => {
         setTime((prevTime) => {
@@ -59,7 +58,7 @@ export default function Page() {
   }, [start, time.minutes, pause]);
 
   return (
-    <div className="container">
+    <div className="container text-tertiary-light dark:text-tertiary-dark">
       <div className="top">
         <h1>Timer</h1>
         <div>
@@ -87,5 +86,3 @@ export default function Page() {
     </div>
   );
 }
-
-

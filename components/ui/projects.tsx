@@ -7,9 +7,9 @@ type Props = {};
 
 function Projects({}: Props) {
   return (
-    <div className="section-container">
+    <div className="section-container" id="projects">
       {" "}
-      <div className="pl-3 text-center md:text-left">Projects</div>
+      <div className="pl-3 text-center md:text-left font-bold">Projects</div>
       <div className="section-items flex-wrap">
         {projects.map((project) => {
           return <ProjectCard {...project} key={project.id} />;
@@ -45,7 +45,7 @@ const ProjectCard = ({
           </div>
 
           <div className="p-1 flex gap-2 flex-col">
-            <div className="text-xl">{name}</div>
+            <div className="text-xl font-semibold">{name}</div>
             <div className="overflow-hidden line-clamp-3">{description}</div>
             <div className="flex gap-2">
               {tags.map((t: any) => (

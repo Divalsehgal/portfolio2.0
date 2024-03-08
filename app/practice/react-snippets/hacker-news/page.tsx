@@ -106,10 +106,12 @@ export default function Page() {
   }, [isFetching, content]);
 
   return (
-    <div>
+    <div className="text-tertiary-light dark:text-tertiary-dark">
       <p>Hacker News</p>
       {data.length == 0 ? (
-        <>wait for sometime we are here only ...</>
+        <div className="text-tertiary-light dark:text-tertiary-dark">
+          wait for sometime we are here only ...
+        </div>
       ) : (
         <div
           className="main-content"
