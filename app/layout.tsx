@@ -42,7 +42,7 @@ export default function RootLayout({
             <SiteHeader />
             <ScrollButton />
             {/* <Top /> */}
-            <main className="flex-1 flex justify-center m-2 items-center">
+            <main className="flex-1 flex justify-center m-2 overflow-hidden min-w-0 items-center">
               {children}
             </main>
             <SiteFooter />
