@@ -11,7 +11,7 @@ function WorkExperience({}: Props) {
       <div className="pl-3 text-center md:text-left font-bold">
         Work Experience
       </div>
-      <div className="section-items flex-col">
+      <div className="section-items flex-row">
         {experiences.map((experience: any) => {
           return <ExperienceCard {...experience} key={experience?.id} />;
         })}

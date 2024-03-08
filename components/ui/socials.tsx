@@ -20,21 +20,19 @@ function Socials({}: Props) {
 
 export default Socials;
 
-const SocialCard = ({ platform, link, iconUrl, id}: any) => {
+const SocialCard = ({ platform, link, iconUrl, id }: any) => {
   return (
     <div
-      className="w-full bg-secondary-light dark:bg-secondary-dark text-sm"
+      className="md:w-max flex-grow bg-secondary-light dark:bg-secondary-dark text-sm"
       key={id}
     >
-      <Link href={link}>
-        <div className="flex flex-row items-center md:gap-2 h-12 w-16">
-          <Image
-            className="object-cover w-full h-full "
-            src={iconUrl}
-            alt={platform}
-          />
-          <div className="flex-1 hidden md:flex">{platform}</div>
-        </div>
+      <Link href={link} className="flex flex-row justify-center md:justify-evenly items-center md:gap-2  ">
+        <Image
+          className="flex  object-cover w-8 h-8 "
+          src={iconUrl}
+          alt={platform}
+        />
+        <div className=" hidden md:flex">{platform}</div>
       </Link>
     </div>
   );
