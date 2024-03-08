@@ -33,16 +33,16 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={cn(
-          "min-h-screen bg-background bg-black  font-sans box-border antialiased",
+          "min-h-screen bg-background bg-black font-sans box-border antialiased",
           chivoMono.className
         )}
       >
         <div vaul-drawer-wrapper="">
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
-            <ScrollButton/>
+            <ScrollButton />
             {/* <Top /> */}
-            <main className="flex-1 flex justify-center items-center">
+            <main className="flex-1 flex justify-center m-2 items-center">
               {children}
             </main>
             <SiteFooter />

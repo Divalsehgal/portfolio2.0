@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AboutComponent() {
   return (
-    <div className="section-items">
+    <div className="">
       {/* Introduction */}
       <div className="text-center justify-evenly flex flex-col gap-4">
         <div className="text-2xl font-bold">My Name is Dival Sehgal</div>
