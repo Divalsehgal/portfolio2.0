@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-import { navLinks } from "../../constants/index";
+import { navLinks, upcomingLinks } from "../../constants/index";
 import Link from "next/link";
 import { Menu, Sun, Moon } from "lucide-react";
 import {
@@ -10,10 +10,16 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import ProgressBar from "./progress-bar";
 
 const SiteHeader = () => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -56,7 +62,6 @@ const SiteHeader = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
-
   return (
     <header
       className={`sticky w-full h-1/5 flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20  backdrop-blur supports-[backdrop-filter]:bg-primary-light/20  dark:supports-[backdrop-filter]:bg-primary-dark/20  ${
@@ -94,6 +99,28 @@ const SiteHeader = () => {
                 {nav.title}
               </li>
             </Link>
+          ))}{" "}
+          {upcomingLinks.map((nav: any) => (
+            <TooltipProvider key={nav.id}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <li
+                    key={nav.id}
+                    className={`text-[18px] font-medium cursor-pointer`}
+                    onClick={() => setActive(nav.title)}
+                  >
+                    {nav.title}
+                  </li>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p
+                    className={`hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer`}
+                  >
+                    Coming Soon
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           ))}{" "}
           <li
             className="text-[18px] font-medium cursor-pointer"

@@ -29,11 +29,6 @@ export const navLinks = [
     title: "Home",
     linkUrl: "/",
   },
-  // {
-  //   id: "blog",
-  //   title: "Blog",
-  //   linkUrl: "/blog",
-  // },
   {
     id: "practice",
     title: "Practice",
@@ -46,7 +41,14 @@ export const navLinks = [
   },
 ];
 
-
+const upcomingLinks = [
+  {  
+    id: "blog",
+    title: "Blog",
+    linkUrl: "/blog",
+    disabled : true
+  }
+]
 
 const technologies = [
   { id: 1, name: "HTML 5", icon: html },
@@ -225,10 +227,10 @@ const projects = [
     id: 1,
     name: "Excel-plus",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Built with Vanilla JavaScript, our Excel clone project features a familiar spreadsheet interface, supporting cell editing, formulas, and formatting",
     tags: [
       {
-        name: "vanilla js",
+        name: "vanillajs",
       },
       {
         name: "dom manipulation",
@@ -241,7 +243,7 @@ const projects = [
     id: 2,
     name: "Multiplayer-RPC",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "Socket-powered Rock Paper Scissors game, hosting two players at a time while others eagerly await their turn",
     tags: [
       {
         name: "react",
@@ -263,7 +265,7 @@ const projects = [
     id: 3,
     name: "Ticket Generation",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Experience streamlined ticket management with our Next.js project, powered by MongoDB. Seamlessly create, update, and delete tickets for efficient task handling. Enhance collaboration and productivity with this intuitive CRUD application",
     tags: [
       {
         name: "nextjs",
@@ -330,6 +332,7 @@ const questionsArray = [
     linkUrl: "comment-reply-box",
   },
 ];
+
 const portfolioLinks = [
   {
     id: 1,
@@ -372,4 +375,5 @@ export {
   certifications,
   questionsArray,
   portfolioLinks,
+  upcomingLinks,
 };
