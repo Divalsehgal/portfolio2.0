@@ -7,15 +7,18 @@ type Props = {};
 
 function Projects({}: Props) {
   return (
-    <div className="section-container" id="projects">
+    <section
+      className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
+      id="projects"
+    >
       {" "}
-      <div className="pl-3 text-center md:text-left font-bold">Projects</div>
-      <div className="section-items flex-wrap">
+      <div className="section-title">Projects</div>
+      <div className="section-items flex-wrap overflow-auto">
         {projects.map((project) => {
           return <ProjectCard {...project} key={project.id} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -32,7 +35,7 @@ const ProjectCard = ({
   return (
     <div
       key={id}
-      className="flex flex-grow w-60 flex-col bg-secondary-light dark:bg-secondary-dark rounded-t-md"
+      className="flex-grow w-60 flex-col bg-secondary-light dark:bg-secondary-dark rounded-t-md"
     >
       <Link href={source_code_link}>
         <div className="flex flex-col">
@@ -44,10 +47,10 @@ const ProjectCard = ({
             />
           </div>
 
-          <div className="p-1 flex gap-2 flex-col">
+          <div className="p-4 flex gap-2 flex-col">
             <div className="text-xl font-semibold">{name}</div>
             <div className="overflow-hidden line-clamp-3">{description}</div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               {tags.map((t: any) => (
                 <div
                   className="border px-1 rounded-sm bg-primary-light dark:bg-primary-dark"

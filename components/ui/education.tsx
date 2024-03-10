@@ -5,14 +5,17 @@ type Props = {};
 
 function Education({}: Props) {
   return (
-    <div className="section-container" id="education">
-      <div className="pl-3 text-center md:text-left font-bold ">Education</div>
+    <section
+      className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
+      id="education"
+    >
+      <div className="section-title">Education</div>
       <div className="section-items flex-col md:flex-row ">
         {education.map((edu) => {
           return <EducationCard {...edu} key={edu.id} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 

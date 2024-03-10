@@ -59,7 +59,7 @@ const SiteHeader = () => {
 
   return (
     <header
-      className={`sticky w-full flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20  backdrop-blur supports-[backdrop-filter]:bg-primary-light/20  dark:supports-[backdrop-filter]:bg-primary-dark/20  ${
+      className={`sticky w-full h-1/5 flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20  backdrop-blur supports-[backdrop-filter]:bg-primary-light/20  dark:supports-[backdrop-filter]:bg-primary-dark/20  ${
         scrolled ? "bg-primary-light dark:bg-primary-dark" : "bg-transparent"
       }`}
     >
@@ -111,11 +111,11 @@ const SiteHeader = () => {
 
             <SheetContent
               side="top"
-              className="bg-primary-light dark:bg-primary-dark text-tertiary-light dark:text-tertiary-dark h-32  p-4 border-none .text-sm"
+              className="bg-primary-light dark:bg-primary-dark text-tertiary-light dark:text-tertiary-dark h-48  p-4 border-none .text-sm"
             >
               {/* <SheetTitle>Are you absolutely sure?</SheetTitle> */}
               <SheetDescription>
-                <div className="text-justify text-tertiary-light dark:text-tertiary-dark text-xl flex flex-col justify-between items-center outline-none ">
+                <div className="text-justify text-tertiary-light dark:text-tertiary-dark text-xl flex flex-col justify-between items-center outline-none gap-4 ">
                   {navLinks.map((nav) => (
                     <div
                       key={nav.id}
@@ -132,6 +132,12 @@ const SiteHeader = () => {
                       <a href={`${nav.linkUrl}`}>{nav.title}</a>
                     </div>
                   ))}
+                  <div
+                    className="text-[18px] font-medium cursor-pointer"
+                    onClick={toggleTheme}
+                  >
+                    {!darkMode ? <Sun /> : <Moon />}
+                  </div>
                 </div>
               </SheetDescription>
             </SheetContent>

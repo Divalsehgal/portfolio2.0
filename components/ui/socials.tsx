@@ -7,14 +7,14 @@ type Props = {};
 
 function Socials({}: Props) {
   return (
-    <div className="section-container flex-wrap" id="social">
-      <h1 className="mb-4 text-center md:text-left font-bold">Socials</h1>
+    <section className="flex-col  h-max  gap-6 flex-wrap" id="social">
+      <h1 className="section-title">Socials</h1>
       <div className="section-items">
         {socialLinks.map((socialLink) => {
           return <SocialCard {...socialLink} key={socialLink.platform} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -22,11 +22,14 @@ export default Socials;
 
 const SocialCard = ({ platform, link, iconUrl, id }: any) => {
   return (
-    <div
-      className="md:w-max flex-grow bg-secondary-light dark:bg-secondary-dark text-sm"
+    <section
+      className="md:w-max p-2 flex-grow bg-secondary-light dark:bg-secondary-dark text-sm"
       key={id}
     >
-      <Link href={link} className="flex flex-row justify-center md:justify-evenly items-center md:gap-2  ">
+      <Link
+        href={link}
+        className="flex flex-row justify-center md:justify-center items-center md:gap-2  "
+      >
         <Image
           className="flex  object-cover w-8 h-8 "
           src={iconUrl}
@@ -34,6 +37,6 @@ const SocialCard = ({ platform, link, iconUrl, id }: any) => {
         />
         <div className=" hidden md:flex">{platform}</div>
       </Link>
-    </div>
+    </section>
   );
 };

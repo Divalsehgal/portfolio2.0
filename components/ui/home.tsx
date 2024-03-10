@@ -11,27 +11,21 @@ function Home() {
   return (
     <div className="flex md:justify-center md:items-center">
       <div className="flex flex-col  gap-4 md:flex-wrap md:px-40 md:gap-16">
-        {/* Image Component */}
-        <div className="flex items-center flex-col xs:flex-col xs:gap-4 xs:items-center md:flex-row md:justify-between md:gap-6">
+        <section className="flex h-screen  flex-col gap-4 xs:items-center md:flex-row  md:gap-6 justify-center items-center backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10">
           <ProfileImage />
           <AboutComponent />
-        </div>
-        {/* Work Experience */}
-        <div className="flex flex-col md:justify-center gap-4 md:gap-6">
-          <WorkExperience />
-          {/* Projects */}
-          <Projects />
-        </div>
-        {/* Skills */}
+        </section>
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
+        <WorkExperience />
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
+        <Projects />
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
         <Tech />
-        {/* Education */}
-
-        <div className="flex flex-col gap-4 md:gap-6">
-          <Education />
-
-          <Certification />
-        </div>
-        {/* Socials */}
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
+        <Education />
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
+        <Certification />
+        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
         <Socials />
       </div>
     </div>

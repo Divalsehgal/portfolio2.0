@@ -28,10 +28,14 @@ const ScrollButton = () => {
   };
 
   return (
-    <div className={`fixed bottom-4 right-4 ${isVisible ? "block" : "hidden"}`}>
+    <div
+      className={`fixed bottom-4 z-50 right-4 ${
+        isVisible ? "block" : "hidden"
+      }`}
+    >
       <button
         onClick={scrollToTop}
-        className="bg-secondary-light hover:bg-primary-light text-tertiary-light dark:text-tertiary-dark
+        className="border-2 bg-secondary-light border-primary-light dark:border-primary-dark hover:bg-primary-light text-tertiary-light dark:text-tertiary-dark
             dark:bg-secondary-dark dark:hover-bg-primary-dark
         font-bold py-2 px-4 rounded"
       >

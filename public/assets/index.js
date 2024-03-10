@@ -31,6 +31,11 @@ import instagram from "./social/instagram.png";
 import gmail from "./social/gmail.png";
 import github1 from "./social/github.png";
 
+
+import project1 from "./projects/project1.png"
+import project2 from "./projects/project2.png"
+import project3 from "./projects/project3.png"
+
 export {
   logo,
   backend,
@@ -60,6 +65,8 @@ export {
   linkedin,
   github1,
   gmail,
-  instagram
+  instagram,
+  project1, project2,
+  project3
 
 };

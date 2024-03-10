@@ -6,17 +6,18 @@ type Props = {};
 
 function WorkExperience({}: Props) {
   return (
-    <div className="section-container" id="work-experiance">
+    <section
+      className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
+      id="work-experiance"
+    >
       {" "}
-      <div className="pl-3 text-center md:text-left font-bold">
-        Work Experience
-      </div>
+      <div className="section-title">Work Experience</div>
       <div className="section-items flex-row">
         {experiences.map((experience: any) => {
           return <ExperienceCard {...experience} key={experience?.id} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -32,7 +33,7 @@ const ExperienceCard = ({
 }: any) => {
   return (
     <div
-      className="flex flex-col md:flex-row h-1/2 bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
+      className="flex flex-col md:flex-row  bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
       key={id}
     >
       <div className="flex place-content-center md:place-content-start">
@@ -54,7 +55,7 @@ const ExperienceCard = ({
           {points.map((m: string) => {
             return (
               <li className="flex items-center text-xs" key={m}>
-                <span className="mr-2">&#8226;</span>
+                <span className="mr-2 text-sm">&#8226;</span>
                 {m}
               </li>
             );

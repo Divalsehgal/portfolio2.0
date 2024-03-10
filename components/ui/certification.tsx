@@ -6,16 +6,17 @@ type Props = {};
 
 function Certification({}: Props) {
   return (
-    <div className="section-container" id="certifications">
-      <div className="pl-3 text-center md:text-left font-bold">
-        Certifications
-      </div>
+    <section
+      className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
+      id="certifications"
+    >
+      <div className="section-title">Certifications</div>
       <div className="section-items flex-wrap">
         {certifications.map((cert) => {
           return <CertificationCard {...cert} key={cert.id} />;
         })}
       </div>
-    </div>
+    </section>
   );
 }
 

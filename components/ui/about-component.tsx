@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function AboutComponent() {
   return (
-    <div className="section-items">
+    <div className="section-items w-2/3 h-full">
       {/* Introduction */}
       <div className="text-center justify-evenly flex flex-col gap-4">
         <div className="text-2xl font-bold">My Name is Dival Sehgal</div>
@@ -26,7 +26,7 @@ const LinkItem = (m: any) => {
   return (
     <Link
       key={m.id}
-      className="underline text-xl text-tertiary-light dark:text-tertiary-dark"
+      className=" text-xl border-2 p-1 border-secondary-light dark:border-secondary-dark text-tertiary-light dark:text-tertiary-dark"
       href={`#${m.link}`}
     >
       {m?.name}

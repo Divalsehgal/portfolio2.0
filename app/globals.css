@@ -6,12 +6,21 @@ html {
     scroll-behavior: smooth;
 }
 
+.profile_image {
+    filter: opacity(0.5) drop-shadow(0 0 0 transparent);
+}
+
 .section-items {
-    @apply flex gap-4 p-4 m-2 flex-wrap border border-solid min-w-0 border-secondary-light dark:border-secondary-dark bg-primary-light dark:bg-primary-dark;
+    @apply flex gap-4 p-4 m-2 flex-wrap;
 }
 
 .section-container {
-    @apply flex flex-col gap-6;
+    @apply flex h-screen flex-col gap-6 justify-start;
+}
+
+
+.section-title {
+    @apply pl-3 text-2xl pt-6 text-center font-bold
 }
 
 .superscript {
@@ -25,4 +34,16 @@ html {
     top: -0.4em;
     left: 2.2em;
     font-size: smaller;
+}
+
+
+#work-experiance,
+#social,
+#technical,
+#certifications,
+#education,
+#projects {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
 }

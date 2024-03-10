@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -15,17 +11,16 @@ import {
   git,
   figma,
   docker,
-  carrent,
-  jobit,
-  tripguide,
   landmarkgroup,
   nineleaps,
   gmail,
   linkedin,
   stackoverflow,
-  github1,
   instagram,
   github,
+  project1,
+  project2,
+  project3,
 } from "../public/assets";
 
 export const navLinks = [
@@ -34,36 +29,24 @@ export const navLinks = [
     title: "Home",
     linkUrl: "/",
   },
-  {
-    id: "blog",
-    title: "Blog",
-    linkUrl: "/blog",
-  },
+  // {
+  //   id: "blog",
+  //   title: "Blog",
+  //   linkUrl: "/blog",
+  // },
   {
     id: "practice",
     title: "Practice",
     linkUrl: "/practice",
   },
+  {
+    id: "legacy",
+    title: "legacy",
+    linkUrl: "https://resume-50c34.web.app/",
+  },
 ];
 
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
+
 
 const technologies = [
   { id: 1, name: "HTML 5", icon: html },
@@ -240,69 +223,60 @@ const certifications = [
 const projects = [
   {
     id: 1,
-    name: "Car Rent",
+    name: "Excel-plus",
     description:
       "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "vanilla js",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
+        name: "dom manipulation",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: project1,
+    source_code_link: "https://github.com/Divalsehgal/excel-plus",
   },
   {
     id: 2,
-    name: "Job IT",
+    name: "Multiplayer-RPC",
     description:
       "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
+        name: "socket",
       },
       {
-        name: "scss",
-        color: "pink-text-gradient",
+        name: "typescript",
+      },
+      {
+        name: "node",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: project2,
+    source_code_link: "https://github.com/Divalsehgal/mutiplayer-rpc",
   },
   {
     id: 3,
-    name: "Trip Guide",
+    name: "Ticket Generation",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
     tags: [
       {
         name: "nextjs",
-        color: "blue-text-gradient",
       },
       {
-        name: "supabase",
-        color: "green-text-gradient",
+        name: "mongodb",
       },
       {
-        name: "css",
-        color: "pink-text-gradient",
+        name: "tailwind",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: project3,
+    source_code_link: "https://github.com/Divalsehgal/ticket-system",
   },
 ];
 
@@ -356,35 +330,40 @@ const questionsArray = [
     linkUrl: "comment-reply-box",
   },
 ];
- const portfolioLinks=[{
-  id:1,
-  name:"Projects",
-  link:"projects"
- },
- {
-  id:2,
-  name:"Education",
-  link:"education"
- },
- {
-  id:3,
-  name:"Certification",
-  link:"certifications"
- },
- {
-  id:4,
-  name:"Technical",
-  link:"technical"
- },
+const portfolioLinks = [
   {
-  id:5,
-  name:"Social",
-  link:"social"
- }
-]
+    id: 1,
+    name: "Work",
+    link: "work-experiance",
+  },
+  {
+    id: 2,
+    name: "Projects",
+    link: "projects",
+  },
+  {
+    id: 3,
+    name: "Education",
+    link: "education",
+  },
+  {
+    id: 4,
+    name: "Certification",
+    link: "certifications",
+  },
+  {
+    id: 5,
+    name: "Technical",
+    link: "technical",
+  },
+  {
+    id: 6,
+    name: "Social",
+    link: "social",
+  },
+];
 
 export {
-  services,
   technologies,
   experiences,
   projects,
@@ -392,5 +371,5 @@ export {
   socialLinks,
   certifications,
   questionsArray,
-  portfolioLinks
+  portfolioLinks,
 };
