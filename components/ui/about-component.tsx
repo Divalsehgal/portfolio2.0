@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function AboutComponent() {
   return (
-    <div className="section-items w-2/3 h-full">
+    <div className="section-items w-10/12 h-full">
       {/* Introduction */}
-      <div className="text-center justify-evenly flex flex-col gap-4">
+      <div className="text-center justify-center flex flex-col gap-4">
         <div className="text-2xl font-bold">My Name is Dival Sehgal</div>
         <div className="text-center">
           I am a full stack developer having 4+ years of experinace. Welcome to
