@@ -5,8 +5,12 @@ type Props = {};
 
 function ProfileImage({}: Props) {
   return (
-    <div className="section-items  h-4/5 object-contain w-4/5 sm:w-1/3 md:w-1/3 ">
-      <Image src={profile} className="profile_image" alt="profile_image" />
+    <div className="section-items  h-4/5  w-4/5 sm:w-1/3 md:w-1/3 ">
+      <Image
+        src={profile}
+        className="profile_image object-contain"
+        alt="profile_image"
+      />
     </div>
   );
 }
