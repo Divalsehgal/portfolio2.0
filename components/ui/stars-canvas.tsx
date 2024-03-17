@@ -1,20 +1,24 @@
-'use client'
-import { useState, useRef, Suspense } from "react";
+"use client";
+
+import { useState, useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as THREE from "three";
 
 import * as random from "maath/random";
-const Stars = (props:any) => {
+import { TypedArray } from "maath/dist/declarations/src/ctypes";
+const Stars = (props: any) => {
   const ref = useRef<THREE.Mesh>(null);
-  const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), { radius: 1.2 })
-  );
+  const [sphere, setSphere] = useState<TypedArray>()
 
-  useFrame((state:any, delta:any):any => {
-    if(ref.current){
-    ref.current.rotation.x -= delta / 10;
-    ref.current.rotation.y -= delta / 15;
+  useEffect(() => {
+    return setSphere(random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+  }, []);
+
+  useFrame((state: any, delta: any): any => {
+    if (ref.current) {
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
     }
   });
 
