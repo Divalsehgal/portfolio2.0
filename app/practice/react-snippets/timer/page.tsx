@@ -4,18 +4,17 @@ import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [time, setTime] = useState({ minutes: 0 });
-  const [inputValue, setInputValue] = useState(0);
+  const [time, setTime] = useState<{ minutes: number }>({ minutes: 0 });
+  const [inputValue, setInputValue] = useState<number | "">(0);
   const [pause, setPause] = useState(false);
   const [start, setStart] = useState(false);
-  const resetHandler = () => {
-    setStart(false);
-    setTime({ minutes: inputValue });
-  };
 
   const toggleTimer = () => {
     if (time?.minutes > 0) {
       setStart(!start);
+      setTime({
+        minutes: typeof inputValue === "number" ? inputValue : 0,
+      });
       setPause(false);
     }
   };
@@ -25,9 +24,12 @@ export default function Page() {
     setInputValue(0);
   };
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value);
+    const trimmedValue = event.target.value.trim();
+    const value = trimmedValue === "" ? "" : parseInt(trimmedValue, 10);
     setInputValue(value);
-    setTime({ minutes: value });
+    if (!isNaN(value as number)) {
+      setTime({ minutes: value as number });
+    }
   };
 
   const pauseHandler = () => {
@@ -36,19 +38,21 @@ export default function Page() {
 
   useEffect(() => {
     let timer: any = 0;
-    if (start && time.minutes > 0 && !pause) {
-      timer = setInterval(() => {
-        setTime((prevTime) => {
-          const temp = prevTime.minutes--;
-          if (temp === 0) {
-            clearInterval(timer);
-            setStart(false);
-          }
-          return {
-            minutes: temp,
-          };
-        });
-      }, 1000);
+    if (start && time.minutes > 0) {
+      if (!pause) {
+        timer = setInterval(() => {
+          setTime((prevTime) => {
+            const temp = prevTime.minutes--;
+            if (temp === 0) {
+              clearInterval(timer);
+              setStart(false);
+            }
+            return {
+              minutes: temp,
+            };
+          });
+        }, 1000);
+      }
     } else {
       clearInterval(timer);
     }
@@ -76,8 +80,7 @@ export default function Page() {
         <div>{start && time?.minutes}</div>
         <div className="button">
           <Button onClick={toggleTimer}>{!start ? "start" : "stop"}</Button>
-          <Button onClick={resetHandler}>reset timer</Button>
-          <Button onClick={clearHandler}>clear</Button>
+          <Button onClick={clearHandler}>reset</Button>
           <Button onClick={pauseHandler} disabled={!start}>
             {!pause ? "pause" : "resume"}
           </Button>
