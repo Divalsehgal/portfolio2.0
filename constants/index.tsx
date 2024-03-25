@@ -280,6 +280,28 @@ const projects = [
     image: project3,
     source_code_link: "https://github.com/Divalsehgal/ticket-system",
   },
+  {
+    id: 4,
+    name: "Hotel-Booking",
+    description: "full stack hotel-booking application ",
+    tags: [
+      {
+        name: "nodejs",
+      },
+      {
+        name: "mongodb",
+      },
+      {
+        name: "tailwind",
+      },
+      {
+        name: "typescript",
+      },
+    ],
+    image: project3,
+    source_code_link: "https://github.com/Divalsehgal/holiday.git",
+  },
+  
 ];
 
 const questionsArray = [

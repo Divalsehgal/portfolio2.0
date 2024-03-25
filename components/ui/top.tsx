@@ -6,7 +6,7 @@ type Props = {};
 
 function Top({}: Props) {
     const pathname = usePathname();
-  const isHomePage = pathname === "/";
+    const isHomePage = pathname === "/";
 
   if (isHomePage) {
   return (

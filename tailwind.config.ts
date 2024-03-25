@@ -39,9 +39,6 @@ interface MyConfig extends Config {
         'accordion-down': string;
         'accordion-up': string;
       };
-      fontFamily: {
-        sans: string[];
-      };
       colors?: any; // Update type to match expected Tailwind CSS configuration
     };
   };
@@ -79,9 +76,6 @@ const config: MyConfig = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
         primary: {

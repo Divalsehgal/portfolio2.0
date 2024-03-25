@@ -33,7 +33,7 @@ const ExperienceCard = ({
 }: any) => {
   return (
     <div
-      className="flex flex-col md:flex-row  bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
+      className="flex container flex-col md:flex-row  bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
       key={id}
     >
       <div className="flex place-content-center md:place-content-start">
@@ -54,7 +54,7 @@ const ExperienceCard = ({
         <ul className="list-none h-28 overflow-scroll md:h-full md:overflow-hidden ">
           {points.map((m: string) => {
             return (
-              <li className="flex items-center text-xs" key={m}>
+              <li className="flex items-center text-sm " key={m}>
                 <span className="mr-2 text-sm">&#8226;</span>
                 {m}
               </li>

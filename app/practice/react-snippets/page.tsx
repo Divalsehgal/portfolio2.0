@@ -11,7 +11,7 @@ import { questionsArray } from "@/constants";
 
 type Props = {};
 
-function page({}: Props) {
+function Page({}: Props) {
   return (
     <div className="p-10 flex flex-1 gap-3 flex-wrap border border-secondary-light dark:border-secondary-dark">
       {" "}
@@ -39,4 +39,4 @@ function page({}: Props) {
   );
 }
 
-export default page;
+export default Page;

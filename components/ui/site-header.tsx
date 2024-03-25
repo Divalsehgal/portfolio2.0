@@ -146,7 +146,7 @@ const SiteHeader = () => {
                   {navLinks.map((nav) => (
                     <div
                       key={nav.id}
-                      className={`font-poppins font-medium cursor-pointer text-[18px] ${
+                      className={`font-medium cursor-pointer text-[18px] ${
                         active !== nav.title
                           ? "text-tertiary-light dark:text-tertiary-dark"
                           : "text-secondary-light dark:text-secondary-dark"

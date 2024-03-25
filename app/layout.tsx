@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/ui/site-footer";
 import Top from "@/components/ui/top";
 import ScrollButton from "@/components/ui/scroll-button";
 
-const chivoMono = Chivo_Mono({ subsets: ["latin"] });
+const chivoMono = Chivo_Mono({ subsets: ["latin"] , display: 'swap', });
 
 export const metadata: Metadata = {
   title: "Dival Sehgal",
@@ -20,7 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      className={chivoMono.className}
+    >
       <head />
       <link
         rel="apple-touch-icon"
@@ -33,7 +37,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={cn(
-          "min-h-screen bg-background bg-black font-sans box-border antialiased",
+          "min-h-screen bg-background bg-black box-border antialiased",
           chivoMono.className
         )}
       >
@@ -41,7 +45,7 @@ export default function RootLayout({
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
             <ScrollButton />
-          
+
             {/* <Top /> */}
             <main className="flex-1 flex justify-center m-2 overflow-hidden min-w-0 items-center">
               {children}

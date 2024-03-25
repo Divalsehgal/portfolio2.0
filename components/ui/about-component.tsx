@@ -1,5 +1,4 @@
 import { portfolioLinks } from "@/constants";
-import Link from "next/link";
 
 export default function AboutComponent() {
   return (
@@ -23,13 +22,25 @@ export default function AboutComponent() {
 }
 
 const LinkItem = (m: any) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const section = document.getElementById(m.link);
+    if (section) {
+      const topPos = section.getBoundingClientRect().top + window.scrollY;
+      console.log(section.getBoundingClientRect().top, window.scrollY);
+      window.scrollTo({
+        top: topPos - 100,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
-    <Link
+    <button
       key={m.id}
+      onClick={scrollToSection}
       className=" text-xl border-2 p-1 border-secondary-light dark:border-secondary-dark text-tertiary-light dark:text-tertiary-dark"
-      href={`#${m.link}`}
     >
       {m?.name}
-    </Link>
+    </button>
   );
 };
