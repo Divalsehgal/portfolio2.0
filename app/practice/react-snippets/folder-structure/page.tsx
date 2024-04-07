@@ -1,4 +1,3 @@
-'use client'
 import { files } from "./files";
 import Folder from "./components/Folder";
 

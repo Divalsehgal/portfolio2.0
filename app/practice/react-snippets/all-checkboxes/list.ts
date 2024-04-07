@@ -1,4 +1,9 @@
-export const list = [
+export type ListProps ={
+    id:number,
+    name:string,
+    checked:boolean
+}
+export const list:ListProps[] = [
     {
         id: 0,
         name: 'Kingfisher',

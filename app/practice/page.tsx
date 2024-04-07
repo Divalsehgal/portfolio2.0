@@ -6,32 +6,34 @@ import React from "react";
 type Props = {};
 
 function Page({}: Props) {
-const defaultTab = "react-snippets";
+  const defaultTab = "react-snippets";
   return (
-    <div className="container h-screen">
+    <div className="py-8 container h-screen">
       <Tabs defaultValue={defaultTab} className="">
-        <TabsList>
+        <TabsList className="">
           <TabsTrigger value="react-snippets">React snippets</TabsTrigger>
           <TabsTrigger value="javascript-problems">
             Javascript problems
           </TabsTrigger>
         </TabsList>
-        <TabsContent
-          value="react-snippets"
-          className="text-tertiary-light dark:text-tertiary-dark"
-        >
-          <Link href="/practice/react-snippets">
-            <Button>React snippets</Button>
-          </Link>
-        </TabsContent>
-        <TabsContent
-          value="javascript-problems"
-          className="text-tertiary-light dark:text-tertiary-dark"
-        >
-          <Link href="/practice/javascript-problems">
-            <Button>JavaScript problems</Button>
-          </Link>
-        </TabsContent>
+        <section className="mt-8">
+          <TabsContent
+            value="react-snippets"
+            className="text-tertiary-light dark:text-tertiary-dark "
+          >
+            <Link href="/practice/react-snippets">
+              <Button>React snippets</Button>
+            </Link>
+          </TabsContent>
+          <TabsContent
+            value="javascript-problems"
+            className="text-tertiary-light dark:text-tertiary-dark"
+          >
+            <Link href="/practice/javascript-problems">
+              <Button>JavaScript problems</Button>
+            </Link>
+          </TabsContent>
+        </section>
       </Tabs>
     </div>
   );

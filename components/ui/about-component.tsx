@@ -1,4 +1,5 @@
 import { portfolioLinks } from "@/constants";
+import type { PortfolioLinkProps } from "@/types/index";
 
 export default function AboutComponent() {
   return (
@@ -21,7 +22,7 @@ export default function AboutComponent() {
   );
 }
 
-const LinkItem = (m: any) => {
+const LinkItem = (m: Readonly<PortfolioLinkProps>) => {
   const scrollToSection = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const section = document.getElementById(m.link);

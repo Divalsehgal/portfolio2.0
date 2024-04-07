@@ -2,13 +2,13 @@
 
 import React, { useEffect } from "react";
 import Checkbox from "./components/Checkbox";
-import { list } from "./list";
+import { list, ListProps } from "./list";
 
 export default function Page() {
-  const [boxState, setBoxState] = React.useState(list);
-  const [select, setSelect] = React.useState(false);
+  const [boxState, setBoxState] = React.useState<ListProps[]>(list);
+  const [select, setSelect] = React.useState<boolean>(false);
 
-  const onChangeHandler = (id:any) => {
+  const onChangeHandler = (id: number | string) => {
     if (id === "select all") {
       setBoxState((prev) => {
         return prev.map((f) => {
@@ -51,15 +51,14 @@ export default function Page() {
         onChange={onChangeHandler}
         checked={select}
       />
-      {boxState?.map((b, index): any => (
-        <React.Fragment key={b.id}>
+      {boxState?.map((b) => (
           <Checkbox
+            key={b.id}
             label={b.name}
             id={b.id}
             onChange={onChangeHandler}
             checked={b.checked}
           />
-        </React.Fragment>
       ))}
     </div>
   );

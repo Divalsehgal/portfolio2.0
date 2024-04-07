@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { data } from "./data";
 import { Button } from "@/components/ui/button";
-
+export type TransferListProps = {
+  title: string;
+  id: number;
+  checked: boolean;
+};
 export const TransferList = () => {
-  const [array, setArray] = useState<any>(data);
+  const [array, setArray] = useState<TransferListProps[]>(data);
 
-  const [array1, setArray1] = useState<any[]>([]);
+  const [array1, setArray1] = useState<TransferListProps[]>([]);
 
-  const leftChecked = array.some((f:any) => f?.checked);
-  const rightChecked = array1.some((f:any) => f?.checked);
+  const leftChecked = array.some((f) => f?.checked);
+  const rightChecked = array1.some((f) => f?.checked);
 
-  const selectHandler = (id: any) => {
-    return function (e: any) {
+  const selectHandler = (id: number) => {
+    return function (e: React.MouseEvent) {
    let target= e.target as HTMLButtonElement;
       if (target.classList.contains("table1") && !rightChecked) {
-        const temp = array.map((f:any) => {
+        const temp = array.map((f) => {
           if (f.id === id) {
             f.checked = !f.checked;
             return f;
@@ -25,7 +29,7 @@ export const TransferList = () => {
 
         setArray(temp);
       } else if (target.classList.contains("table2") && !leftChecked) {
-        const temp = array1.map((f:any) => {
+        const temp = array1.map((f) => {
           if (f.id === id) {
             f.checked = !f.checked;
             return f;
@@ -39,10 +43,12 @@ export const TransferList = () => {
     };
   };
 
-  const buttonHandler = (e: any) => {
-    if (e.target.name === "left" && rightChecked) {
-      let selected :any= [],
-        notSelected :any= [];
+  const buttonHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    const name = target.name;
+    if (name === "left" && rightChecked) {
+      let selected: TransferListProps[] = [],
+        notSelected: TransferListProps[] = [];
       array1.forEach((f) => {
         if (f.checked) {
           f.checked = false;
@@ -54,11 +60,11 @@ export const TransferList = () => {
 
       setArray1(notSelected);
 
-      setArray((prev: any) => [...selected, ...prev]);
-    } else if (leftChecked && e.target.name === "right") {
-      let selected:any = [],
-        notSelected:any = [];
-      array.forEach((f:any) => {
+      setArray((prev: TransferListProps[]) => [...selected, ...prev]);
+    } else if (leftChecked && name === "right") {
+      let selected: TransferListProps[] = [],
+        notSelected: TransferListProps[] = [];
+      array.forEach((f) => {
         if (f.checked) {
           f.checked = false;
           selected.push(f);
@@ -67,14 +73,13 @@ export const TransferList = () => {
         }
       });
 
-      setArray1((prev: any) => [...selected, ...prev]);
+      setArray1((prev) => [...selected, ...prev]);
 
       setArray(notSelected);
     }
   };
 
   return (
-    <>
       <div
         style={{
           display: "flex",
@@ -90,7 +95,7 @@ export const TransferList = () => {
         >
           <h1>Table 1</h1>
           <div>
-            {array.map((m: any) => {
+            {array.map((m) => {
               return (
                 <div
                   key={m.id}
@@ -146,6 +151,5 @@ export const TransferList = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };

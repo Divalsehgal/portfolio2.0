@@ -1,10 +1,8 @@
-import { experiences } from "@/constants";
+import { experiences } from "@/constants/index";
+import type { ExperienceProps } from "@/types/index";
 import Image from "next/image";
-import React from "react";
 
-type Props = {};
-
-function WorkExperience({}: Props) {
+function WorkExperience() {
   return (
     <section
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
@@ -13,7 +11,7 @@ function WorkExperience({}: Props) {
       {" "}
       <div className="section-title">Work Experience</div>
       <div className="section-items flex-row">
-        {experiences.map((experience: any) => {
+        {experiences.map((experience) => {
           return <ExperienceCard {...experience} key={experience?.id} />;
         })}
       </div>
@@ -30,7 +28,7 @@ const ExperienceCard = ({
   date,
   points,
   id,
-}: any) => {
+}: Readonly<ExperienceProps>) => {
   return (
     <div
       className="flex container flex-col md:flex-row  bg-secondary-light gap-4 dark:bg-secondary-dark p-2"

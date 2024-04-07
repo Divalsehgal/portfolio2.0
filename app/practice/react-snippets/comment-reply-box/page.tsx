@@ -36,9 +36,7 @@ type PostProps = {
 
 export default function Page(){
   return (
-    <>
       <Post />
-    </>
   );
 };
 
@@ -162,7 +160,7 @@ const Comments = ({
                 commentData,
                 commentTimeStamp,
                 replies,
-              }: CommentProps) => {
+              }) => {
                 return (
                   <React.Fragment key={commentId}>
                     <div className="comment-content">{commentData}</div>
@@ -252,7 +250,7 @@ const Reply = ({
     <Accordian childrenProps={functionProps}>
       {replies.length > 0 ? (
         <div className="replies-container">
-          {replies.map(({ replyId, replyData, replyTimeStamp }: ReplyProps) => {
+          {replies.map(({ replyId, replyData, replyTimeStamp }) => {
             return (
               <React.Fragment key={replyId}>
                 <div className="reply-content">{replyData}</div>

@@ -12,8 +12,8 @@ type HackerNewsData = {
 export default function Page() {
   const [total, setTotal] = useState<[]>([]);
   const [data, setData] = useState<HackerNewsData[]>([]);
-  const [isFetching, setIsFetching] = useState<Boolean>(false);
-  let content:any;
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+  let content: HTMLElement | null = null; // Define the type of content
   if (typeof document !== "undefined") {
     content = document.querySelector(".main-content");
   }
@@ -28,7 +28,7 @@ export default function Page() {
     setTotal(result);
   };
 
-  const fetHackerStories = async () => {
+  const fetchHackerStories = async () => {
     const temp: Promise<Response>[] = [];
     // slicing the from total to only load firstsetof itemsPerPage
     total.slice(0, itemsPerPage).forEach((m) => {
@@ -39,8 +39,7 @@ export default function Page() {
     setData(result);
   };
   const loadMoreStories = () => {
-    let timer:any = 0;
-    clearTimeout(timer);
+    let timer: NodeJS.Timeout;
     const startIndex = data.length;
     let endIndex = startIndex + itemsPerPage;
     if (!isFetching && endIndex <= total.length) {
@@ -63,6 +62,9 @@ export default function Page() {
     } else {
       return;
     }
+    return () => {
+      clearTimeout(timer);
+    };
   };
 
   // To find out total number of stories
@@ -72,7 +74,7 @@ export default function Page() {
 
   // To fetch first set of itemsPerpage
   useEffect(() => {
-    fetHackerStories();
+    fetchHackerStories();
   }, [total]);
 
   useEffect(() => {

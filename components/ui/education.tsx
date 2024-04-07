@@ -1,9 +1,9 @@
 import { education } from "@/constants";
+import type { EducationProps } from "@/types/index";
 import React from "react";
 
-type Props = {};
 
-function Education({}: Props) {
+function Education() {
   return (
     <section
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
@@ -21,7 +21,7 @@ function Education({}: Props) {
 
 export default Education;
 
-const EducationCard = ({ title, institution, date, grade, id }: any) => {
+const EducationCard = ({ title, institution, date, grade, id }: Readonly<EducationProps>) => {
   return (
     <div
       key={id}

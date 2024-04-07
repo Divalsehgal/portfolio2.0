@@ -1,4 +1,3 @@
-"use client";
 export interface FileProps {
   name: string;
   isFolder: boolean;

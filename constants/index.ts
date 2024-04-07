@@ -22,8 +22,20 @@ import {
   project2,
   project3,
 } from "../public/assets";
+import type {
+  TechnologyProps,
+  UpcomingLinkProps,
+  NavLinkProps,
+  ExperienceProps,
+  SocialLinkProps,
+  EducationProps,
+  CertificationProps,
+  ProjectProps,
+  QuestionProps,
+  PortfolioLinkProps,
+} from "@/types/index";
 
-export const navLinks = [
+const navLinks: NavLinkProps[] = [
   {
     id: "home",
     title: "Home",
@@ -41,16 +53,16 @@ export const navLinks = [
   },
 ];
 
-const upcomingLinks = [
-  {  
+const upcomingLinks: UpcomingLinkProps[] = [
+  {
     id: "blog",
     title: "Blog",
     linkUrl: "/blog",
-    disabled : true
-  }
-]
+    disabled: true,
+  },
+];
 
-const technologies = [
+const technologies: TechnologyProps[] = [
   { id: 1, name: "HTML 5", icon: html },
   {
     id: 2,
@@ -109,7 +121,7 @@ const technologies = [
   },
 ];
 
-const experiences = [
+const experiences: ExperienceProps[] = [
   {
     id: 1,
     title: "Sr. Frontend Engineer",
@@ -136,7 +148,7 @@ const experiences = [
   },
 ];
 
-const education = [
+const education: EducationProps[] = [
   {
     id: 1,
     title: "B.Tech in Computer Science",
@@ -160,7 +172,7 @@ const education = [
   },
 ];
 
-const socialLinks = [
+const socialLinks: SocialLinkProps[] = [
   {
     id: 1,
     platform: "GitHub",
@@ -193,7 +205,7 @@ const socialLinks = [
   },
 ];
 
-const certifications = [
+const certifications: CertificationProps[] = [
   {
     id: 1,
     link: "https://www.hackerrank.com/certificates/af0a7e164183",
@@ -222,7 +234,7 @@ const certifications = [
   },
 ];
 
-const projects = [
+const projects: ProjectProps[] = [
   {
     id: 1,
     name: "Excel-plus",
@@ -301,10 +313,9 @@ const projects = [
     image: project3,
     source_code_link: "https://github.com/Divalsehgal/holiday.git",
   },
-  
 ];
 
-const questionsArray = [
+const questionsArray: (QuestionProps | undefined)[] = [
   {
     id: "1",
     file: "Type Writer Effect",
@@ -315,19 +326,16 @@ const questionsArray = [
     file: "Hacker News",
     linkUrl: "hacker-news",
   },
-  ,
   {
     id: "3",
     file: "Form Validation",
     linkUrl: "form-validation",
   },
-  ,
   {
     id: "4",
     file: "All CheckBoxes",
     linkUrl: "all-checkboxes",
   },
-  ,
   {
     id: "5",
     file: "CountDown Timer",
@@ -355,7 +363,7 @@ const questionsArray = [
   },
 ];
 
-const portfolioLinks = [
+const portfolioLinks: PortfolioLinkProps[] = [
   {
     id: 1,
     name: "Work",
@@ -398,4 +406,5 @@ export {
   questionsArray,
   portfolioLinks,
   upcomingLinks,
+  navLinks,
 };

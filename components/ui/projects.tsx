@@ -1,11 +1,9 @@
 import { projects } from "@/constants";
+import type { ProjectProps } from "@/types/index";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-type Props = {};
-
-function Projects({}: Props) {
+function Projects() {
   return (
     <section
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
@@ -31,7 +29,7 @@ const ProjectCard = ({
   description,
   tags,
   source_code_link,
-}: any) => {
+}: Readonly<ProjectProps>) => {
   return (
     <div
       key={id}
@@ -51,7 +49,7 @@ const ProjectCard = ({
             <div className="text-xl font-semibold">{name}</div>
             <div className="overflow-hidden line-clamp-3">{description}</div>
             <div className="flex gap-2 flex-wrap">
-              {tags.map((t: any) => (
+              {tags.map((t) => (
                 <div
                   className="border px-1 rounded-sm bg-primary-light dark:bg-primary-dark"
                   key={t.name}

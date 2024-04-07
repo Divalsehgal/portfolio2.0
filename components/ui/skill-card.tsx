@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import type { TechnologyProps } from "@/types/index";
 
-function SkillCard({ name, years = "4", icon, id }: any) {
+
+function SkillCard({ name, years = "4", icon, id }: Readonly<TechnologyProps>) {
   return (
     <div
       className="md:w-max flex-grow bg-secondary-light dark:bg-secondary-dark text-sm"

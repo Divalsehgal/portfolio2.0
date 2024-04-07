@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 import { staticCode } from "./sampleCode";
 import { Button } from "@/components/ui/button";
 export default function Page() {
-  const data = staticCode;
   const [pdata, setPdata] = useState("please start generating...");
   const [start, setStart] = useState(false);
-  let timer: any;
+  let timer: NodeJS.Timeout;
   const clickHandler = () => {
     setStart(true);
   };
@@ -21,7 +20,7 @@ export default function Page() {
       }
 
       setPdata((i) => i + staticCode[count]);
-    }, 10);
+    }, 50);
   };
 
   useEffect(() => {

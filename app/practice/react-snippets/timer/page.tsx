@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
   const [time, setTime] = useState<{ minutes: number }>({ minutes: 0 });
-  const [inputValue, setInputValue] = useState<number | "">(0);
+  const [inputValue, setInputValue] = useState<number>(0);
   const [pause, setPause] = useState(false);
   const [start, setStart] = useState(false);
 
   const toggleTimer = () => {
-    if (time?.minutes > 0) {
+    if (time?.minutes || inputValue > 0) {
       setStart(!start);
       setTime({
         minutes: typeof inputValue === "number" ? inputValue : 0,
@@ -24,11 +24,10 @@ export default function Page() {
     setInputValue(0);
   };
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const trimmedValue = event.target.value.trim();
-    const value = trimmedValue === "" ? "" : parseInt(trimmedValue, 10);
-    setInputValue(value);
-    if (!isNaN(value as number)) {
-      setTime({ minutes: value as number });
+    const trimmedValue = event.target.valueAsNumber;
+    setInputValue(trimmedValue);
+    if (!isNaN(trimmedValue as number)) {
+      setTime({ minutes: trimmedValue as number });
     }
   };
 
@@ -37,7 +36,7 @@ export default function Page() {
   };
 
   useEffect(() => {
-    let timer: any = 0;
+    let timer: NodeJS.Timeout;
     if (start && time.minutes > 0) {
       if (!pause) {
         timer = setInterval(() => {
@@ -53,9 +52,7 @@ export default function Page() {
           });
         }, 1000);
       }
-    } else {
-      clearInterval(timer);
-    }
+    } 
     return () => {
       clearInterval(timer);
     };

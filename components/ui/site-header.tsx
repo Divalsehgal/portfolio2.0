@@ -85,7 +85,7 @@ const SiteHeader = () => {
         </Link>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((nav: any) => (
+          {navLinks.map((nav) => (
             <Link href={nav.linkUrl} key={nav.id}>
               <li
                 key={nav.id}
@@ -100,7 +100,7 @@ const SiteHeader = () => {
               </li>
             </Link>
           ))}{" "}
-          {upcomingLinks.map((nav: any) => (
+          {upcomingLinks.map((nav) => (
             <TooltipProvider key={nav.id}>
               <Tooltip>
                 <TooltipTrigger asChild>

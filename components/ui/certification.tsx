@@ -1,10 +1,9 @@
 import { certifications } from "@/constants";
+import type { CertificationProps } from "@/types/index";
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-function Certification({}: Props) {
+function Certification() {
   return (
     <section
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
@@ -21,7 +20,7 @@ function Certification({}: Props) {
 }
 
 export default Certification;
-const CertificationCard = ({ name, link, id }: any) => {
+const CertificationCard = ({ name, link, id }: Readonly<CertificationProps>) => {
   const highlightName = name.split(" ")[0];
   const restName = name.slice(highlightName.length);
   return (

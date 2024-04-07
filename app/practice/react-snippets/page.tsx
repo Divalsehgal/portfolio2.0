@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import {
   Card,
   CardContent,
@@ -8,12 +7,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { questionsArray } from "@/constants";
+import React from "react";
 
 type Props = {};
 
 function Page({}: Props) {
   return (
-    <div className="p-10 flex flex-1 gap-3 flex-wrap border border-secondary-light dark:border-secondary-dark">
+    <div className="p-10 container flex  gap-3 flex-wrap border border-secondary-light dark:border-secondary-dark">
       {" "}
       {questionsArray.map((snippets) => {
         return (
