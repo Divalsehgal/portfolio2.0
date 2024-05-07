@@ -87,23 +87,10 @@ export default function Page() {
       }
     };
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          loadMoreStories();
-        }
-      },
-      { root: null, rootMargin: "0px", threshold: 0.1 }
-    );
-
-    if (lastRef.current) {
-      observer.observe(lastRef.current);
-    }
 
     content?.addEventListener("scroll", handleScroll);
     return () => {
       content?.removeEventListener("scroll", handleScroll);
-      observer.disconnect();
     };
   }, [isFetching, content]);
 

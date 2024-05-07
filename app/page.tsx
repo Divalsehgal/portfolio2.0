@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 function Page() {
   const pathname = usePathname();
 
-  // Check if the current path is the home page (/)
   const isHomePage = pathname === "/";
+  
   return (
     <div className="text-tertiary-light dark:text-tertiary-dark h-full">
       {isHomePage && <StarsCanvas />}

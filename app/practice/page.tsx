@@ -3,12 +3,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
 
-function Page({}: Props) {
+function Page() {
   const defaultTab = "react-snippets";
   return (
-    <div className="py-8 container h-screen">
       <Tabs defaultValue={defaultTab} className="">
         <TabsList className="">
           <TabsTrigger value="react-snippets">React snippets</TabsTrigger>
@@ -35,7 +33,6 @@ function Page({}: Props) {
           </TabsContent>
         </section>
       </Tabs>
-    </div>
   );
 }
 
