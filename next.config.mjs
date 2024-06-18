@@ -1,4 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import withSourceMaps from '@zeit/next-source-maps';
 
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    webpack(config, options) {
+        // Further custom webpack configuration
+        return config;
+    },
+};
+
+export default withSourceMaps(nextConfig);

@@ -70,35 +70,39 @@ const SiteHeader = () => {
     >
       <ProgressBar />
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          href="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
+        <li>
           {" "}
-          <p className=" text-[18px] font-bold cursor-pointer flex ">
-            Dival Sehgal
-          </p>
-        </Link>
+          <Link
+            href="/"
+            className="flex items-center gap-2"
+            onClick={() => {
+              setActive("");
+              window.scrollTo(0, 0);
+            }}
+          >
+            {" "}
+            <p className=" text-[18px] font-bold cursor-pointer flex ">
+              Dival Sehgal
+            </p>
+          </Link>
+        </li>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((nav) => (
-            <Link href={nav.linkUrl} key={nav.id}>
-              <li
-                key={nav.id}
-                className={`${
-                  active === nav.title
-                    ? "text-secondary-light dark:text-secondary-dark"
-                    : "text-tertiary-light dark:text-tertiary-dark"
-                } hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer`}
-                onClick={() => setActive(nav.title)}
-              >
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title
+                  ? "text-secondary-light dark:text-secondary-dark"
+                  : "text-tertiary-light dark:text-tertiary-dark"
+              } hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
+            >
+              {" "}
+              <Link href={nav.linkUrl} key={nav.id}>
                 {nav.title}
-              </li>
-            </Link>
+              </Link>
+            </li>
           ))}{" "}
           {upcomingLinks.map((nav) => (
             <TooltipProvider key={nav.id}>
