@@ -35,7 +35,7 @@ const SocialCard = ({
         <Image
           className="flex  object-cover w-8 h-8 "
           src={iconUrl}
-          alt={platform}
+          alt={`${platform}-icon`}
         />
         <div className=" hidden md:flex">{platform}</div>
       </Link>

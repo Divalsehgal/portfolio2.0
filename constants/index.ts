@@ -175,31 +175,31 @@ const education: EducationProps[] = [
 const socialLinks: SocialLinkProps[] = [
   {
     id: 1,
-    platform: "git hub icon",
+    platform: "GitHub",
     link: "https://github.com/Divalsehgal",
     iconUrl: github,
   },
   {
     id: 2,
-    platform: "stack overflow icon",
+    platform: "Stack Overflow",
     link: "https://stackoverflow.com/users/10756134/dival-sehgal",
     iconUrl: stackoverflow,
   },
   {
     id: 3,
-    platform: "gmail icon",
+    platform: "Gmail",
     link: "mailto:sehgaldival@gmail.com",
     iconUrl: gmail,
   },
   {
     id: 4,
-    platform: "linkedin icon",
+    platform: "Linkedin",
     link: "https://www.linkedin.com/in/divalsehgal/",
     iconUrl: linkedin,
   },
   {
     id: 5,
-    platform: "instagram icon",
+    platform: "Instagram",
     link: "https://www.instagram.com/divalsehgal/",
     iconUrl: instagram,
   },

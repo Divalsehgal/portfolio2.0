@@ -70,7 +70,6 @@ const SiteHeader = () => {
     >
       <ProgressBar />
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <li>
           {" "}
           <Link
             href="/"
@@ -85,7 +84,6 @@ const SiteHeader = () => {
               Dival Sehgal
             </p>
           </Link>
-        </li>
 
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((nav) => (
