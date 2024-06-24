@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const ProgressBar = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
+  const controls = useAnimation();
 
   useEffect(() => {
     const onScroll = () => {
@@ -20,11 +22,19 @@ const ProgressBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    controls.start({
+      width: `${scrollPercentage}%`,
+      transition: { duration: 0.2 },
+    });
+  }, [scrollPercentage, controls]);
+
   return (
-    <div
+    <motion.div
       className="h-2 bg-tertiary-light dark:bg-tertiary-dark fixed top-0 left-0 z-50"
-      style={{ width: `${scrollPercentage}%` }}
-    ></div>
+      initial={{ width: "0%" }}
+      animate={controls}
+    ></motion.div>
   );
 };
 

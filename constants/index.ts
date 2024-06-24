@@ -367,7 +367,7 @@ const portfolioLinks: PortfolioLinkProps[] = [
   {
     id: 1,
     name: "Work",
-    link: "work-experiance",
+    link: "work-experience",
   },
   {
     id: 2,

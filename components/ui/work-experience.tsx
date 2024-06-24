@@ -1,25 +1,31 @@
 import { experiences } from "@/constants/index";
 import type { ExperienceProps } from "@/types/index";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 function WorkExperience() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5, delay: 0.2 } },
+  };
+
   return (
-    <section
+    <motion.section
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
-      id="work-experiance"
+      id="work-experience"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
-      {" "}
       <div className="section-title">Work Experience</div>
       <div className="section-items flex-row">
         {experiences.map((experience) => {
-          return <ExperienceCard {...experience} key={experience?.id} />;
+          return <ExperienceCard {...experience} key={experience.id} />;
         })}
       </div>
-    </section>
+    </motion.section>
   );
 }
-
-export default WorkExperience;
 
 const ExperienceCard = ({
   title,
@@ -29,10 +35,16 @@ const ExperienceCard = ({
   points,
   id,
 }: Readonly<ExperienceProps>) => {
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <div
-      className="flex container flex-col md:flex-row  bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
+    <motion.div
+      className="flex container flex-col md:flex-row bg-secondary-light gap-4 dark:bg-secondary-dark p-2"
       key={id}
+      variants={cardVariants}
     >
       <div className="flex place-content-center md:place-content-start">
         <Image
@@ -49,17 +61,19 @@ const ExperienceCard = ({
           </div>
           <div className="text-xs flex-end pr-2">{date}</div>
         </div>
-        <ul className="list-none h-28 overflow-scroll md:h-full md:overflow-hidden ">
-          {points.map((m: string) => {
+        <ul className="list-none h-28 overflow-scroll md:h-full md:overflow-hidden">
+          {points.map((point: string) => {
             return (
-              <li className="flex items-center text-sm " key={m}>
+              <li className="flex items-center text-sm" key={point}>
                 <span className="mr-2 text-sm">&#8226;</span>
-                {m}
+                {point}
               </li>
             );
           })}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
+
+export default WorkExperience;

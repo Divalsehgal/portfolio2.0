@@ -1,15 +1,14 @@
-"use client";
-
 import { useState, useRef, Suspense, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as THREE from "three";
-
+import { motion } from "framer-motion";
 import * as random from "maath/random";
 import { TypedArray } from "maath/dist/declarations/src/ctypes";
+
 const Stars = (props: any) => {
   const ref = useRef<THREE.Mesh>(null);
-  const [sphere, setSphere] = useState<TypedArray>()
+  const [sphere, setSphere] = useState<TypedArray>();
 
   useEffect(() => {
     return setSphere(random.inSphere(new Float32Array(5000), { radius: 1.2 }));
@@ -23,7 +22,9 @@ const Stars = (props: any) => {
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+    <group
+      rotation={[0, 0, Math.PI / 4]}
+    >
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
@@ -39,15 +40,19 @@ const Stars = (props: any) => {
 
 const StarsCanvas = () => {
   return (
-    <div className="w-full h-auto absolute inset-0 z-[-1]">
+    <motion.div
+      className="w-full h-full absolute inset-0 z-[-1]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Stars />
-        </Suspense>
-
+        </Suspense>{" "}
         <Preload all />
       </Canvas>
-    </div>
+    </motion.div>
   );
 };
 

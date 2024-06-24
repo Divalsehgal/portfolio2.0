@@ -2,6 +2,7 @@ import { projects } from "@/constants";
 import type { ProjectProps } from "@/types/index";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 function Projects() {
   return (
@@ -9,7 +10,6 @@ function Projects() {
       className="section-container backdrop-blur supports-[backdrop-filter]: bg-primary-light/10 dark:supports-[backdrop-filter]:bg-primary-dark/10"
       id="projects"
     >
-      {" "}
       <div className="section-title">Projects</div>
       <div className="section-items flex-wrap overflow-auto">
         {projects.map((project) => {
@@ -31,17 +31,20 @@ const ProjectCard = ({
   source_code_link,
 }: Readonly<ProjectProps>) => {
   return (
-    <div
+    <motion.div
       key={id}
       className="flex-grow w-60 flex-col bg-secondary-light dark:bg-secondary-dark rounded-t-md"
+      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
     >
       <Link href={source_code_link}>
-        <div className="flex flex-col">
+        <motion.div className="flex flex-col">
           <div className="">
             <Image
               className="rounded-t-md h-36 w-full object-cover"
               src={image}
               alt=""
+              width={400}
+              height={200}
             />
           </div>
 
@@ -59,8 +62,8 @@ const ProjectCard = ({
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </Link>
-    </div>
+    </motion.div>
   );
 };

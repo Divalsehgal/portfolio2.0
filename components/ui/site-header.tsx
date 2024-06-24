@@ -16,6 +16,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
+
 import ProgressBar from "./progress-bar";
 
 const SiteHeader = () => {
@@ -63,31 +65,36 @@ const SiteHeader = () => {
     }
   }, [darkMode]);
   return (
-    <header
-      className={`sticky w-full h-1/5 flex items-center p-5  text-tertiary-light dark:text-tertiary-dark top-0 z-20  backdrop-blur supports-[backdrop-filter]:bg-primary-light/20  dark:supports-[backdrop-filter]:bg-primary-dark/20  ${
+    <motion.header
+      className={`sticky w-full h-1/5 flex items-center p-5 text-tertiary-light dark:text-tertiary-dark top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-primary-light/20 dark:supports-[backdrop-filter]:bg-primary-dark/20 ${
         scrolled ? "bg-primary-light dark:bg-primary-dark" : "bg-transparent"
       }`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
     >
       <ProgressBar />
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+        {" "}
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          onClick={() => {
+            setActive("");
+            window.scrollTo(0, 0);
+          }}
+        >
           {" "}
-          <Link
-            href="/"
-            className="flex items-center gap-2"
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
+          <motion.p
+            className="text-[18px] font-bold cursor-pointer flex"
+            whileHover={{ scale: 1.1 }}
           >
-            {" "}
-            <p className=" text-[18px] font-bold cursor-pointer flex ">
-              Dival Sehgal
-            </p>
-          </Link>
-
+            Dival Sehgal
+          </motion.p>
+        </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((nav) => (
-            <li
+            <motion.li
               key={nav.id}
               className={`${
                 active === nav.title
@@ -95,43 +102,40 @@ const SiteHeader = () => {
                   : "text-tertiary-light dark:text-tertiary-dark"
               } hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
+              whileHover={{ scale: 1.1 }}
             >
-              {" "}
-              <Link href={nav.linkUrl} key={nav.id}>
-                {nav.title}
-              </Link>
-            </li>
-          ))}{" "}
+              <Link href={nav.linkUrl}>{nav.title}</Link>
+            </motion.li>
+          ))}
           {upcomingLinks.map((nav) => (
             <TooltipProvider key={nav.id}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <li
+                  <motion.li
                     key={nav.id}
-                    className={`text-[18px] font-medium cursor-pointer`}
+                    className="text-[18px] font-medium cursor-pointer"
                     onClick={() => setActive(nav.title)}
+                    whileHover={{ scale: 1.1 }}
                   >
                     {nav.title}
-                  </li>
+                  </motion.li>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p
-                    className={`hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer`}
-                  >
+                  <p className="hover:text-secondary-light dark:hover:text-secondary-dark text-[18px] font-medium cursor-pointer">
                     Coming Soon
                   </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-          ))}{" "}
-          <li
+          ))}
+          <motion.li
             className="text-[18px] font-medium cursor-pointer"
             onClick={toggleTheme}
+            whileHover={{ scale: 1.1 }}
           >
             {!darkMode ? <Sun /> : <Moon />}
-          </li>
+          </motion.li>
         </ul>
-
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <Sheet>
             <SheetTrigger>
@@ -140,13 +144,12 @@ const SiteHeader = () => {
 
             <SheetContent
               side="top"
-              className="bg-primary-light dark:bg-primary-dark text-tertiary-light dark:text-tertiary-dark h-48  p-4 border-none .text-sm"
+              className="bg-primary-light dark:bg-primary-dark text-tertiary-light dark:text-tertiary-dark h-48 p-4 border-none .text-sm"
             >
-              {/* <SheetTitle>Are you absolutely sure?</SheetTitle> */}
               <SheetDescription>
-                <div className="text-justify text-tertiary-light dark:text-tertiary-dark text-xl flex flex-col justify-between items-center outline-none gap-4 ">
+                <div className="text-justify text-tertiary-light dark:text-tertiary-dark text-xl flex flex-col justify-between items-center outline-none gap-4">
                   {navLinks.map((nav) => (
-                    <div
+                    <motion.div
                       key={nav.id}
                       className={`font-medium cursor-pointer text-[18px] ${
                         active !== nav.title
@@ -157,23 +160,25 @@ const SiteHeader = () => {
                         setToggle(!toggle);
                         setActive(nav.title);
                       }}
+                      whileHover={{ scale: 1.1 }}
                     >
-                      <a href={`${nav.linkUrl}`}>{nav.title}</a>
-                    </div>
+                      <Link href={nav.linkUrl}>{nav.title}</Link>
+                    </motion.div>
                   ))}
-                  <div
+                  <motion.div
                     className="text-[18px] font-medium cursor-pointer"
                     onClick={toggleTheme}
+                    whileHover={{ scale: 1.1 }}
                   >
                     {!darkMode ? <Sun /> : <Moon />}
-                  </div>
+                  </motion.div>
                 </div>
               </SheetDescription>
             </SheetContent>
           </Sheet>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
