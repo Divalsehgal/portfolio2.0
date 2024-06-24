@@ -12,7 +12,7 @@ export default function AboutComponent() {
    >
      {/* Introduction */}
      <motion.div
-       className="text-center justify-center flex flex-col gap-4"
+       className="text-center justify-center items-center flex flex-col gap-4"
        initial={{ y: -20, opacity: 0 }}
        animate={{ y: 0, opacity: 1 }}
        transition={{ duration: 0.5 }}
@@ -26,12 +26,11 @@ export default function AboutComponent() {
          animate={{ opacity: 1 }}
          transition={{ delay: 0.3, duration: 0.5 }}
        >
-         I am a full stack developer having 4+ years of experience. Welcome to
-         my corner of the web, where I share my insights, experiences, and
-         projects.
+        Inspired to create
+        meaningful solutions.
        </motion.div>
        <motion.div
-         className="flex gap-4 flex-wrap justify-center"
+         className="flex gap-2 flex-wrap justify-between md:w-4/5"
          initial={{ opacity: 0 }}
          animate={{ opacity: 1 }}
          transition={{ delay: 0.6, duration: 0.5 }}
@@ -62,7 +61,7 @@ export default function AboutComponent() {
      <motion.button
        key={m.id}
        onClick={scrollToSection}
-       className="text-xl border-2 p-1 border-secondary-light dark:border-secondary-dark text-tertiary-light dark:text-tertiary-dark"
+       className="text-xl flex-auto text-center justify-center border-2 p-1 border-secondary-light dark:border-secondary-dark text-tertiary-light dark:text-tertiary-dark"
        whileHover={{ scale: 1.1 }}
      >
        {m?.name}

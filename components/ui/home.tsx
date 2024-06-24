@@ -27,7 +27,7 @@ function Home() {
           <ProfileImage />
           <AboutComponent />
         </motion.section>
-        <hr className="my-8 border-tertiary-light dark:border-tertiary-dark" />
+        <hr className="mb-18 mt-24 border-tertiary-light dark:border-tertiary-dark" />
         <motion.div
           initial="hidden"
           animate="visible"
