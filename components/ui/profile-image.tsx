@@ -11,7 +11,7 @@ function ProfileImage() {
 
   return (
     <motion.div
-      className="section-items sm:w-1/3 md:w-1/3"
+      className="section-items"
       initial="hidden"
       whileHover="hover"
       animate="visible"
@@ -23,8 +23,15 @@ function ProfileImage() {
         src={profile}
         priority={true}
         placeholder="blur"
-        className="profile_image object-contain"
+        className="profile_image"
         alt="profile_image"
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+          width: "100%", // Ensures the image takes up the full width of its container
+          maxHeight: "500px", // Maximum height for mobile view
+        }}
+        sizes="(max-width: 768px) 100vw, 400px" // Adjust as per your layout needs
       />
     </motion.div>
   );
