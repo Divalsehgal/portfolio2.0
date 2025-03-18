@@ -78,7 +78,7 @@ const Post = () => {
 
       <div className="post-feed">
         {posts
-          .toSorted((a, b) => (b.postTimeStamp > a.postTimeStamp ? 1 : -1))
+          ?.toSorted((a, b) => (b.postTimeStamp > a.postTimeStamp ? 1 : -1))
           .map((post) => {
             const { postData, postComments, postTimeStamp } = post;
             const { content } = postData;
