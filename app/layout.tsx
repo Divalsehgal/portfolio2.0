@@ -4,7 +4,6 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import SiteHeader from "@/components/ui/site-header";
 import { SiteFooter } from "@/components/ui/site-footer";
-import Top from "@/components/ui/top";
 import ScrollButton from "@/components/ui/scroll-button";
 
 const chivoMono = Chivo_Mono({ subsets: ["latin"] , display: 'swap', });

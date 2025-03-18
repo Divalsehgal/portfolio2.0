@@ -13,6 +13,7 @@ export default function Page() {
   const [total, setTotal] = useState<[]>([]);
   const [data, setData] = useState<HackerNewsData[]>([]);
   const [isFetching, setIsFetching] = useState<boolean>(false);
+
   let content: HTMLElement | null = null; // Define the type of content
   if (typeof document !== "undefined") {
     content = document.querySelector(".main-content");
@@ -20,6 +21,7 @@ export default function Page() {
   const itemsPerPage = 10;
 
   const lastRef = useRef<null | HTMLDivElement>(null);
+  
   const fetchHackerStoriesCount = async () => {
     const res = await fetch(
       "https://hacker-news.firebaseio.com/v0/jobstories.json"

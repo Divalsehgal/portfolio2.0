@@ -13,9 +13,7 @@ export type User = {
 };
 function page() {
   return (
-    <>
       <MentionBox data={DATA} />
-    </>
   );
 }
 

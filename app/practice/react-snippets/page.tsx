@@ -14,15 +14,13 @@ type Props = {};
 function Page({}: Props) {
   return (
     <div className="p-10 container flex  gap-3 flex-wrap border border-secondary-light dark:border-secondary-dark">
-      {" "}
-      {questionsArray.map((snippets) => {
+      {questionsArray?.map((snippets) => {
         return (
           <React.Fragment key={snippets?.id}>
             <Link href={`/practice/react-snippets/${snippets?.linkUrl}`}>
               <Card>
                 <CardHeader>
                   <CardTitle>{snippets?.file}</CardTitle>
-                  {/* <CardDescription>Questions Description</CardDescription> */}
                 </CardHeader>
                 <CardContent>
                   <p></p>

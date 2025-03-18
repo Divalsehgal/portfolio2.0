@@ -19,7 +19,7 @@ export default function Page() {
     quantity: 0,
   });
 
-  const [formStateError, setFormError] = useState<FormStateError>({
+  const [formStateError, setFormStateError] = useState<FormStateError>({
     product: "",
     quantity: "",
   });
@@ -36,7 +36,7 @@ export default function Page() {
           : "";
     }
 
-    setFormError((prevErrors) => ({
+    setFormStateError((prevErrors) => ({
       ...prevErrors,
       [name]: error,
     }));
@@ -71,7 +71,6 @@ export default function Page() {
 
 
   return (
-    <>
       <form className="text-tertiary-light dark:text-tertiary-dark">
         <Label htmlFor="productName">Product Name</Label>
         <Input
@@ -98,7 +97,6 @@ export default function Page() {
           submit
         </Button>
       </form>
-    </>
   );
 }
 

@@ -18,7 +18,7 @@ const MentionBox = (props:any) => {
     const text = e.target.value;
     setInputValue(text);
 
-    if (text && text.startsWith("@")) {
+    if (text?.startsWith("@")) {
       const fetchedOptions: any[] = fetchMentionOptions(text.substring(1));
       setMentionOptions(fetchedOptions);
       setShowOptions(true);

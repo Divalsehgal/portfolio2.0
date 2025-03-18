@@ -1,13 +1,14 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Page() {
   const [time, setTime] = useState<{ minutes: number }>({ minutes: 0 });
   const [inputValue, setInputValue] = useState<number>(0);
   const [pause, setPause] = useState(false);
   const [start, setStart] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null); // Fix here
 
   const toggleTimer = () => {
     if (time?.minutes || inputValue > 0) {
@@ -26,8 +27,8 @@ export default function Page() {
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const trimmedValue = event.target.valueAsNumber;
     setInputValue(trimmedValue);
-    if (!isNaN(trimmedValue as number)) {
-      setTime({ minutes: trimmedValue as number });
+    if (!isNaN(trimmedValue)) {
+      setTime({ minutes: trimmedValue });
     }
   };
 
@@ -36,14 +37,16 @@ export default function Page() {
   };
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
     if (start && time.minutes > 0) {
       if (!pause) {
-        timer = setInterval(() => {
+        timerRef.current = setInterval(() => {
           setTime((prevTime) => {
-            const temp = prevTime.minutes--;
+            const temp = prevTime.minutes - 1;
             if (temp === 0) {
-              clearInterval(timer);
+              if (timerRef.current) {
+                clearInterval(timerRef.current);
+              }
+              timerRef.current = null;
               setStart(false);
             }
             return {
@@ -52,9 +55,12 @@ export default function Page() {
           });
         }, 1000);
       }
-    } 
+    }
     return () => {
-      clearInterval(timer);
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
     };
   }, [start, time.minutes, pause]);
 
@@ -76,10 +82,10 @@ export default function Page() {
       <div className="bottom">
         <div>{start && time?.minutes}</div>
         <div className="button">
-          <Button onClick={toggleTimer}>{!start ? "start" : "stop"}</Button>
+          <Button onClick={toggleTimer}>{start ? "stop" : "start"}</Button>
           <Button onClick={clearHandler}>reset</Button>
           <Button onClick={pauseHandler} disabled={!start}>
-            {!pause ? "pause" : "resume"}
+            {pause ? "resume" : "pause"}
           </Button>
         </div>
       </div>

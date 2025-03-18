@@ -2,9 +2,8 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 
-type Props = {};
 
-function Top({}: Props) {
+function Top() {
     const pathname = usePathname();
     const isHomePage = pathname === "/";
 
