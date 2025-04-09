@@ -42,11 +42,6 @@ const navLinks: NavLinkProps[] = [
     linkUrl: "/",
   },
   {
-    id: "practice",
-    title: "Practice",
-    linkUrl: "/practice",
-  },
-  {
     id: "legacy",
     title: "legacy",
     linkUrl: "https://resume-50c34.web.app/",
